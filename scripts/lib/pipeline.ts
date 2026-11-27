@@ -68,7 +68,9 @@ export async function baue({ schreiben }: { schreiben: boolean }): Promise<Build
       }
       icon.stile[stil] = { knoten, flaeche, wurzel: w, raster };
     }
-    if (eintrag.status === 'fertig' && !icon.stile.solid) warnungen.push(`${name}: als fertig markiert, aber noch nicht als Fläche (Hauptstil) gezeichnet.`);
+    for (const stil of STILE) {
+      if (eintrag.status?.[stil] && !icon.stile[stil]) warnungen.push(`${name}: hat einen Status für ${stil}, aber keine Datei icons/${stil}/${name}.svg.`);
+    }
     icons.push(icon);
   }
 

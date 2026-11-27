@@ -9,7 +9,7 @@ export type Knoten = [tag: string, attrs: Record<string, string>];
  * gleich aufgebaut sind und sich gleich einfärben lassen.
  *
  * solid (Hauptstil): reine Fläche im 64er-Raster, Details als Aussparung (evenodd), keine Striche
- * outline (Altbestand): Strich 1,35 im 24er-Raster, runde Enden und Ecken („Präziser Stahl“)
+ * outline: Strich 1,35 im 24er-Raster für kleine Größen, runde Enden und Ecken („Präziser Stahl“)
  *
  * Strichstärke und Raster stehen nur hier.
  */

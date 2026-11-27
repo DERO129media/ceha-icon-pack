@@ -16,9 +16,13 @@
 .farbwahl-feld[data-hell='true'] { box-shadow: inset 0 0 0 1px var(--gray-300); }
 .farbwahl-hex { color: var(--gray-500); font-size: 12px; font-variant-numeric: tabular-nums; }
 
-.knopf { display: inline-flex; align-items: center; justify-content: center; gap: var(--abstand-2); min-height: 40px; padding: 0 var(--abstand-4); border-radius: var(--radius); border: 1px solid var(--gray-300); background: var(--weiss); font-weight: 700; font-size: 14px; cursor: pointer; }
-.knopf:hover { border-color: var(--brand-40); color: var(--brand); }
-.knopf[data-variante='primaer'] { background: var(--brand); border-color: var(--brand); color: var(--weiss); }
+/* Knöpfe: eine Hauptaktion je Bereich (primaer), weitere mit Rahmen (sekundaer), Nebenaktionen als Text (still) */
+.knopf { display: inline-flex; align-items: center; justify-content: center; gap: var(--abstand-2); min-height: 40px; padding: 0 var(--abstand-4); border-radius: var(--radius); border: 1px solid var(--gray-300); background: var(--weiss); color: var(--text); font-weight: 600; font-size: 14px; cursor: pointer; transition: background-color 120ms, border-color 120ms, color 120ms; }
+.knopf:hover { border-color: var(--brand-40); color: var(--brand); background: var(--brand-8); }
+.knopf[data-variante='primaer'] { background: var(--brand); border-color: var(--brand); color: var(--weiss); font-weight: 700; box-shadow: var(--schatten-klein); }
 .knopf[data-variante='primaer']:hover { background: var(--brand-light); border-color: var(--brand-light); color: var(--weiss); }
-.knopf[data-variante='still'] { border-color: transparent; background: transparent; }
-.knopf:disabled { opacity: 0.5; cursor: progress; }
+.knopf[data-variante='still'] { border-color: transparent; background: transparent; color: var(--brand); }
+.knopf[data-variante='still']:hover { background: var(--brand-8); }
+.knopf[data-groesse='klein'] { min-height: 30px; padding: 0 var(--abstand-3); font-size: 13px; }
+.knopf:disabled { opacity: 0.5; cursor: not-allowed; }
+.knopf-kreuz { font-size: 18px; line-height: 1; }

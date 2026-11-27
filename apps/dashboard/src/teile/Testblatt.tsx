@@ -1,5 +1,5 @@
 import type { Icon, Stil } from '../daten';
-import { STATUS_NAMEN } from '../daten';
+import { STATUS_NAMEN, statusVon } from '../daten';
 import { IconBild } from '../ui/IconBild';
 
 const GROESSEN = [16, 20, 24, 32, 48];
@@ -40,7 +40,7 @@ export function Testblatt({ icons, stil, farbe, oeffnen }: { icons: Icon[]; stil
                     {i.name}
                   </button>
                   <span className="testblatt-status">
-                    <span className="status-punkt" data-status={i.status} /> {STATUS_NAMEN[i.status]}
+                    <span className="status-punkt" data-status={statusVon(i, stil)} /> {STATUS_NAMEN[statusVon(i, stil)]}
                   </span>
                 </th>
                 {GROESSEN.map((g) => (

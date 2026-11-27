@@ -1,5 +1,5 @@
 import type { Icon, Kategorie, Stil } from '../daten';
-import { KATEGORIE_NAMEN, STATUS_NAMEN, STIL_NAMEN, wirksamerStil } from '../daten';
+import { KATEGORIE_NAMEN, STATUS_NAMEN, STIL_NAMEN, statusVon, wirksamerStil } from '../daten';
 import { IconBild } from '../ui/IconBild';
 import type { Reihenfolge } from './Leiste';
 
@@ -36,7 +36,7 @@ export function Raster({ icons, stil, farbe, reihenfolge, oeffnen }: Props) {
                   <IconBild icon={icon} stil={stil} groesse={32} farbe={farbe.hex} />
                   <span className="kachel-name">{icon.name}</span>
                   <span className="kachel-titel">{icon.titel}</span>
-                  <span className="status-punkt" data-status={icon.status} title={STATUS_NAMEN[icon.status]} />
+                  <span className="status-punkt" data-status={statusVon(icon, stil)} title={STATUS_NAMEN[statusVon(icon, stil)]} />
                   {wirksamerStil(icon, stil) !== stil && <span className="kachel-ersatz">{STIL_NAMEN[wirksamerStil(icon, stil)]}</span>}
                   {reihenfolge === 'verwendung' && icon.verwendungen > 0 && <span className="kachel-zahl">{icon.verwendungen}×</span>}
                 </button>

@@ -2,8 +2,8 @@
 
 Eigenes Icon-Pack der Ceha Deutschland GmbH für Website, Drucksachen und Software.
 Hauptstil ist die **Fläche im 64er-Raster** (Produkte, Eigenschaften, Website-Icons).
-Zehn ältere Ceha-Zeichnungen gibt es zusätzlich als Kontur im 24er-Raster (Altbestand).
-Lucide wird nicht mehr verwendet.
+Jedes Icon gibt es zusätzlich als **Kontur im 24er-Raster** für kleine Größen und UI.
+Hinweise für KI-Agenten und Regeln für Beiträge: [AGENTS.md](AGENTS.md).
 
 - **Konfigurator** (`apps/dashboard`): alle Icons ansehen, Fläche oder Kontur wählen,
   in Brand-Farben, Schwarz oder Weiß als SVG, PNG, PDF, EPS oder ZIP herunterladen.
@@ -28,19 +28,27 @@ icons/
   manifest.json      Name, Titel, Kategorien, Aliase, Status, Verwendungen
   names.lock.json    jeder je veröffentlichte Name – wächst nur
   solid/*.svg        Fläche, 64er-Raster (Hauptstil)
-  outline/*.svg      Kontur, 24er-Raster (Altbestand, nur noch für zehn Icons)
+  outline/*.svg      Kontur, 24er-Raster
 scripts/             Prüfung und Build
 packages/icons/      das npm-Paket (Ausgaben werden erzeugt, nicht einchecken)
 apps/dashboard/      der Konfigurator
 docs/gestaltung.md   Regeln für eigene Icons
 ```
 
+## Status
+
+Fläche und Kontur werden getrennt freigegeben (`entwurf` → `fertig`). Die Flächen aus dem
+Marketing-Standard sind freigegeben; alle Konturen und nachgezeichnete Flächen stehen auf
+Entwurf, bis sie im Konfigurator (Ansicht „Testblatt“) durchgesehen sind. Den Status setzt
+immer ein Mensch.
+
 ## Ein Icon neu zeichnen
 
 1. Datei `icons/solid/<name>.svg` anlegen oder überschreiben. Regeln: [docs/gestaltung.md](docs/gestaltung.md).
    Aus Illustrator oder der Vorlagen-Ablage: feste Farbe durch `currentColor` ersetzen, `clip-rule` entfernen.
 2. Neues Motiv: zuerst in `icons/manifest.json` eintragen.
-3. Status im Manifest setzen: `entwurf` → `fertig`.
+3. Status im Manifest je Stil setzen, neue Zeichnungen als Entwurf: `"status": {"solid": "entwurf", "outline": "entwurf"}`.
+   Kontur in `icons/outline/<name>.svg` nach den Kontur-Regeln zeichnen.
 4. Bei laufendem `pnpm dev` zeigt der Konfigurator die Änderung sofort. Verstößt die Datei
    gegen eine Regel, erscheint die Meldung als Overlay im Browser.
 
@@ -62,8 +70,7 @@ dann findet astro-icon das Set als `ceha:`:
 "@iconify-json/ceha": "npm:@ceha/icons@^0.1.0"
 ```
 
-Der Name ohne Endung zeigt immer die Fläche. Mit Endung gibt es einen bestimmten Stil
-(`-outline` nur für die zehn Icons mit Kontur):
+Der Name ohne Endung zeigt immer die Fläche. Mit Endung gibt es einen bestimmten Stil:
 
 ```astro
 <Icon name="ceha:wrench" />          <!-- Fläche -->

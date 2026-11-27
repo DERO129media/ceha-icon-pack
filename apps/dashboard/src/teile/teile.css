@@ -28,27 +28,39 @@
 .balken-spur { height: 4px; border-radius: 2px; background: rgb(255 255 255 / 0.16); overflow: hidden; }
 .balken-wert { height: 100%; background: var(--weiss); }
 
-/* Leiste */
+/* Leiste: bleibt beim Scrollen stehen und scrollt bei Bedarf selbst */
 .leiste {
   grid-area: leiste;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: var(--abstand-6);
-  padding: var(--abstand-6);
+  padding: var(--abstand-2) var(--abstand-6) var(--abstand-6);
   border-right: 1px solid var(--gray-200);
   background: var(--off-white);
 }
-.leiste-gruppe { display: grid; gap: var(--abstand-3); }
-.leiste-gruppe h2 { font-size: 15px; color: var(--text); }
+.seite { background: var(--off-white); }
+.leiste-gruppe { display: grid; gap: var(--abstand-3); padding: var(--abstand-4) 0; border-bottom: 1px solid var(--gray-200); }
+.leiste-gruppe:last-child { border-bottom: 0; }
+.leiste-gruppe h2 { font-family: var(--schrift-text); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-500); }
+.leiste .segment { display: flex; }
+.leiste .segment-option { flex: 1; text-align: center; }
 .leiste-hinweis { margin: 0; font-size: 12px; line-height: 1.45; color: var(--gray-500); }
 .auswahl { min-height: 40px; padding: 0 var(--abstand-3); border: 1px solid var(--gray-300); border-radius: var(--radius); background: var(--weiss); }
-.formate { display: grid; grid-template-columns: 1fr 1fr; gap: var(--abstand-2); }
-.format { display: flex; align-items: center; gap: var(--abstand-2); font-size: 14px; }
-.format input, .schalter input { accent-color: var(--brand); width: 16px; height: 16px; }
+.formate { display: flex; flex-wrap: wrap; gap: var(--abstand-2); }
+.format { position: relative; display: inline-flex; align-items: center; min-height: 32px; padding: 0 var(--abstand-3); border: 1px solid var(--gray-300); border-radius: 999px; background: var(--weiss); font-size: 13px; font-weight: 600; color: var(--gray-600); cursor: pointer; }
+.format input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.format[data-aktiv='true'] { border-color: var(--brand); background: var(--brand-8); color: var(--brand); }
+.format:has(input:focus-visible) { outline: var(--fokus); outline-offset: 1px; }
+.schalter input { accent-color: var(--brand); width: 16px; height: 16px; }
 .feld { display: grid; gap: var(--abstand-1); font-size: 13px; color: var(--gray-600); }
 
 /* Hauptbereich */
-.haupt { grid-area: haupt; padding: var(--abstand-6) var(--abstand-8) var(--abstand-12); }
+.haupt { grid-area: haupt; padding: 0 var(--abstand-8) var(--abstand-12); background: var(--weiss); }
+.suche { position: sticky; top: 0; z-index: 2; display: block; padding: var(--abstand-4) 0; background: var(--weiss); border-bottom: 1px solid var(--gray-200); }
 .suche input {
   width: 100%;
   max-width: 640px;
@@ -148,11 +160,23 @@
 .blatt-teil:nth-of-type(1) { grid-area: teil1; margin-bottom: var(--abstand-6); }
 .blatt-teil:nth-of-type(2) { grid-area: teil2; }
 .blatt-teil h3 { font-size: 15px; }
+.blatt-teil-zusatz { font-family: var(--schrift-text); font-weight: 400; font-size: 13px; color: var(--gray-500); margin-left: var(--abstand-2); }
 .knopfreihe { display: flex; flex-wrap: wrap; gap: var(--abstand-2); }
+
+/* Formatwahl im Zeichnungsblatt: erst Format wählen, dann ein Knopf zum Laden */
+.formatwahl { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--abstand-2); }
+.formatwahl-option { position: relative; display: grid; gap: 2px; padding: var(--abstand-2) var(--abstand-3); border: 1px solid var(--gray-200); border-radius: var(--radius); background: var(--weiss); cursor: pointer; }
+.formatwahl-option input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.formatwahl-option:hover { border-color: var(--brand-40); }
+.formatwahl-option[data-aktiv='true'] { border-color: var(--brand); background: var(--brand-8); box-shadow: inset 0 0 0 1px var(--brand); }
+.formatwahl-option:has(input:focus-visible) { outline: var(--fokus); outline-offset: 1px; }
+.formatwahl-name { font-weight: 600; font-size: 14px; }
+.formatwahl-option[data-aktiv='true'] .formatwahl-name { color: var(--brand); }
+.formatwahl-hinweis { font-size: 12px; line-height: 1.35; color: var(--gray-500); }
+.dateiname { margin: 0; font-size: 12px; color: var(--gray-500); word-break: break-all; font-variant-numeric: tabular-nums; }
 
 .code { border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; }
 .code-kopf { display: flex; justify-content: space-between; align-items: center; padding-left: var(--abstand-3); background: var(--off-white); font-size: 13px; color: var(--gray-600); }
-.code-kopf .knopf { min-height: 32px; font-size: 13px; }
 .code pre { margin: 0; padding: var(--abstand-3); font-size: 13px; overflow-x: auto; }
 .meldung { grid-area: meldung; min-height: 20px; margin: var(--abstand-3) 0 0; font-size: 13px; color: var(--erfolg); }
 
@@ -161,7 +185,7 @@
   .kopf { flex-direction: column; align-items: flex-start; padding: var(--abstand-4); }
   .kopf-fortschritt { flex-direction: column; gap: var(--abstand-3); width: 100%; }
   .balken { width: 100%; }
-  .leiste { border-right: 0; border-bottom: 1px solid var(--gray-200); padding: var(--abstand-4); }
+  .leiste { position: static; max-height: none; border-right: 0; border-bottom: 1px solid var(--gray-200); padding: var(--abstand-2) var(--abstand-4); }
   .haupt { padding: var(--abstand-4); }
   .blatt-inhalt { grid-template-columns: 1fr; grid-template-areas: 'werkzeuge' 'zeichnung' 'schriftfeld' 'teil1' 'teil2' 'meldung'; padding: var(--abstand-4); }
   .blatt-teil:nth-of-type(1) { margin: var(--abstand-6) 0; }

@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { schreibePaket, type FertigesIcon } from '../scripts/lib/ausgabe.ts';
 import type { IconEintrag } from '../scripts/lib/manifest.ts';
 
-const eintrag = (aliases: string[] = []): IconEintrag => ({ titel: 'T', kategorien: ['inhalte'], aliases, status: 'entwurf', verwendungen: 0, tags: [] });
+const eintrag = (aliases: string[] = []): IconEintrag => ({ titel: 'T', kategorien: ['inhalte'], aliases, status: {}, verwendungen: 0, tags: [] });
 const flaeche = { d: 'M0 0Z', fillRule: 'nonzero' as const, rahmen: { links: 0, oben: 0, rechts: 0, unten: 0 } };
 const solid = { knoten: [['path', { d: 'M8 8H56V56H8Z' }]] as [string, Record<string, string>][], flaeche, wurzel: { fill: 'currentColor' }, raster: 64 };
 const outline = { knoten: [['path', { d: 'M2 2H22' }]] as [string, Record<string, string>][], flaeche, wurzel: { fill: 'none', stroke: 'currentColor' }, raster: 24 };

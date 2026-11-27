@@ -23,7 +23,8 @@ export interface Icon {
   titel: string;
   kategorien: Kategorie[];
   aliases: string[];
-  status: Status;
+  /** Status je Stil; ohne Angabe gilt ein gezeichneter Stil als Entwurf */
+  status: Partial<Record<Stil, Status>>;
   verwendungen: number;
   tags: string[];
   stile: Partial<Record<Stil, StilDaten>>;
@@ -39,7 +40,7 @@ export const KATEGORIE_NAMEN: Record<Kategorie, string> = {
 
 export const STATUS_NAMEN: Record<Status, string> = {
   entwurf: 'Entwurf',
-  fertig: 'Ceha',
+  fertig: 'Freigegeben',
 };
 
 export const STIL_NAMEN: Record<Stil, string> = { outline: 'Kontur', solid: 'Fläche' };
@@ -52,6 +53,11 @@ export function alsProps(attrs: Record<string, string>): Record<string, string> 
 /** Fläche ist der Hauptstil; ist sie noch nicht gezeichnet, steht die Kontur ein. */
 export function hauptstil(icon: Icon): Stil {
   return icon.stile.solid ? 'solid' : 'outline';
+}
+
+/** Status des Stils, der für die Auswahl tatsächlich gezeigt wird */
+export function statusVon(icon: Icon, stil: Stil): Status {
+  return icon.status[wirksamerStil(icon, stil)] ?? 'entwurf';
 }
 
 /** Gewählter Stil, oder der andere, wenn der gewählte noch fehlt */

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { DATEN, type Icon } from './daten';
+import { DATEN, statusVon, type Icon } from './daten';
 import { farbeNach } from './design/farben';
 import { Kopf } from './teile/Kopf';
 import { Leiste, type Einstellungen } from './teile/Leiste';
@@ -27,8 +27,8 @@ export function App() {
   }, []);
 
   const sichtbare = useMemo(
-    () => DATEN.icons.filter((i) => (e.filter === 'alle' || i.status === e.filter) && passt(i, suche)),
-    [e.filter, suche],
+    () => DATEN.icons.filter((i) => (e.filter === 'alle' || statusVon(i, e.stil) === e.filter) && passt(i, suche)),
+    [e.filter, e.stil, suche],
   );
   const offenesIcon = DATEN.icons.find((i) => i.name === offen);
 

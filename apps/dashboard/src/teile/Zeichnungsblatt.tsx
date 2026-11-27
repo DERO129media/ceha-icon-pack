@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Icon, Stil } from '../daten';
-import { alsProps, DATEN, hauptstil, STATUS_NAMEN, STIL_NAMEN, wirksamerStil } from '../daten';
+import { alsProps, DATEN, hauptstil, KATEGORIE_NAMEN, STATUS_NAMEN, STIL_NAMEN, statusVon, wirksamerStil } from '../daten';
 import type { Exportfarbe } from '../design/farben';
 import { Segment } from '../ui/Segment';
 import { Knopf } from '../ui/Knopf';
@@ -22,6 +22,7 @@ export function Zeichnungsblatt({ icon, stil, farbe, setzeStil, schliessen }: Pr
   const dialog = useRef<HTMLDialogElement>(null);
   const [raster, setRaster] = useState(true);
   const [pngGroesse, setPngGroesse] = useState(512);
+  const [format, setFormat] = useState<Format>('svg');
   const [meldung, setMeldung] = useState('');
   const s = wirksamerStil(icon, stil);
   const daten = icon.stile[s];
@@ -56,8 +57,8 @@ export function Zeichnungsblatt({ icon, stil, farbe, setzeStil, schliessen }: Pr
           <label className="schalter">
             <input type="checkbox" checked={raster} onChange={(e) => setRaster(e.target.checked)} /> Raster und Hilfslinien
           </label>
-          <Knopf variante="still" onClick={() => dialog.current?.close()} aria-label="Schließen">
-            Schließen
+          <Knopf variante="still" groesse="klein" onClick={() => dialog.current?.close()} aria-label="Schließen" title="Schließen (Esc)">
+            <span aria-hidden="true" className="knopf-kreuz">×</span> Schließen
           </Knopf>
         </div>
 
@@ -93,14 +94,14 @@ export function Zeichnungsblatt({ icon, stil, farbe, setzeStil, schliessen }: Pr
               <td>{icon.name}</td>
               <th>Status</th>
               <td>
-                <span className="status-punkt" data-status={icon.status} /> {STATUS_NAMEN[icon.status]}
+                <span className="status-punkt" data-status={statusVon(icon, stil)} /> {STATUS_NAMEN[statusVon(icon, stil)]} ({STIL_NAMEN[s]})
               </td>
             </tr>
             <tr>
               <th>Aliase</th>
               <td>{icon.aliases.length ? icon.aliases.join(', ') : 'keine'}</td>
               <th>Kategorien</th>
-              <td>{icon.kategorien.join(', ')}</td>
+              <td>{icon.kategorien.map((k) => KATEGORIE_NAMEN[k]).join(', ')}</td>
             </tr>
             <tr>
               <th>Stile</th>
@@ -111,7 +112,7 @@ export function Zeichnungsblatt({ icon, stil, farbe, setzeStil, schliessen }: Pr
             <tr>
               <th>Profil</th>
               <td colSpan={3}>
-                {s === 'solid' ? 'Ceha Fläche: Details als Aussparung, gemeinsame Standlinie, Blech-Radien' : 'Ceha Kontur (Altbestand): Strich 1,35, rund, Blech-Radien'}
+                {s === 'solid' ? 'Ceha Fläche: Details als Aussparung, gemeinsame Standlinie, Blech-Radien' : 'Ceha Kontur: 24er-Raster, Strich 1,35, rund, Blech-Radien'}
               </td>
             </tr>
             <tr>
@@ -126,28 +127,43 @@ export function Zeichnungsblatt({ icon, stil, farbe, setzeStil, schliessen }: Pr
         </table>
 
         <section className="blatt-teil">
-          <h3>Herunterladen in {farbe.name}</h3>
-          <div className="knopfreihe">
+          <h3>
+            Herunterladen <span className="blatt-teil-zusatz">{STIL_NAMEN[s]} · {farbe.name}</span>
+          </h3>
+          <div className="formatwahl" role="radiogroup" aria-label="Format">
             {FORMATE.map((f) => (
-              <Knopf key={f.id} onClick={() => laden(f.id)} title={f.hinweis}>
-                {f.name}
-              </Knopf>
+              <label key={f.id} className="formatwahl-option" data-aktiv={f.id === format}>
+                <input type="radio" name="format" value={f.id} checked={f.id === format} onChange={() => setFormat(f.id)} />
+                <span className="formatwahl-name">{f.name}</span>
+                <span className="formatwahl-hinweis">{f.hinweis}</span>
+              </label>
             ))}
-            <select className="auswahl" value={pngGroesse} onChange={(e) => setPngGroesse(Number(e.target.value))} aria-label="PNG-Größe">
-              {[64, 128, 256, 512, 1024].map((g) => (
-                <option key={g} value={g}>
-                  PNG {g} px
-                </option>
-              ))}
-            </select>
           </div>
+          {format === 'png' && (
+            <label className="feld">
+              Größe
+              <select className="auswahl" value={pngGroesse} onChange={(e) => setPngGroesse(Number(e.target.value))}>
+                {[64, 128, 256, 512, 1024].map((g) => (
+                  <option key={g} value={g}>
+                    {g} × {g} px
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
+          <div className="knopfreihe">
+            <Knopf variante="primaer" onClick={() => laden(format)}>
+              Herunterladen
+            </Knopf>
+            <Knopf onClick={() => kopieren(svgText(icon, stil, farbe.hex), 'SVG-Code')}>SVG-Code kopieren</Knopf>
+          </div>
+          <p className="dateiname">{dateiname(icon, stil, farbe, format, pngGroesse)}</p>
         </section>
 
         <section className="blatt-teil">
           <h3>Einbinden</h3>
           <Code titel="Astro (astro-icon)" code={astroCode} kopieren={kopieren} />
           <Code titel="React" code={reactCode} kopieren={kopieren} />
-          <Knopf onClick={() => kopieren(svgText(icon, stil, farbe.hex), 'SVG')}>SVG-Code kopieren</Knopf>
         </section>
         <p className="meldung" role="status">
           {meldung}
@@ -162,7 +178,7 @@ function Code({ titel, code, kopieren }: { titel: string; code: string; kopieren
     <div className="code">
       <div className="code-kopf">
         <span>{titel}</span>
-        <Knopf variante="still" onClick={() => kopieren(code, titel)}>
+        <Knopf variante="still" groesse="klein" onClick={() => kopieren(code, titel)}>
           Kopieren
         </Knopf>
       </div>

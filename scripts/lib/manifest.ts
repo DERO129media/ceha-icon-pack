@@ -16,8 +16,11 @@ export interface IconEintrag {
   kategorien: Kategorie[];
   /** Weitere Namen, unter denen das Icon erreichbar ist (z. B. frühere Namen) */
   aliases: string[];
-  /** entwurf = Zeichnung in Arbeit, fertig = freigegeben */
-  status: Status;
+  /**
+   * Status je Stil: entwurf = Zeichnung in Arbeit, fertig = freigegeben.
+   * Fehlt die Angabe für einen gezeichneten Stil, gilt er als Entwurf.
+   */
+  status: Partial<Record<Stil, Status>>;
   /** Verwendungen auf ceha-stahlmoebel.de, dient als Priorität */
   verwendungen: number;
   tags: string[];
@@ -32,6 +35,11 @@ export function ladeManifest(iconsDir: string): Manifest {
 }
 
 /** Namen der SVG-Dateien eines Stils, ohne Endung */
+/** Status eines Stils; ohne Angabe gilt ein Stil als Entwurf */
+export function statusVon(e: Pick<IconEintrag, 'status'>, stil: Stil): Status {
+  return e.status[stil] ?? 'entwurf';
+}
+
 export function dateienImStil(iconsDir: string, stil: Stil): string[] {
   const dir = join(iconsDir, stil);
   if (!existsSync(dir)) return [];
@@ -48,7 +56,14 @@ export function pruefeManifest(manifest: Manifest): string[] {
   for (const [name, e] of Object.entries(manifest)) {
     if (!NAME_MUSTER.test(name)) fehler.push(`${name}: Name muss kebab-case sein (a-z, 0-9, Bindestrich).`);
     if (!e.titel) fehler.push(`${name}: Feld "titel" fehlt.`);
-    if (!STATUS.includes(e.status)) fehler.push(`${name}: status "${e.status}" unbekannt, erlaubt: ${STATUS.join(', ')}.`);
+    if (typeof e.status !== 'object' || e.status === null || Array.isArray(e.status)) {
+      fehler.push(`${name}: "status" muss je Stil angegeben werden, z. B. {"solid": "fertig", "outline": "entwurf"}.`);
+    } else {
+      for (const [stil, s] of Object.entries(e.status)) {
+        if (!STILE.includes(stil as Stil)) fehler.push(`${name}: status für unbekannten Stil "${stil}", erlaubt: ${STILE.join(', ')}.`);
+        if (!STATUS.includes(s as Status)) fehler.push(`${name}: status "${s}" unbekannt, erlaubt: ${STATUS.join(', ')}.`);
+      }
+    }
     if (!Array.isArray(e.kategorien) || e.kategorien.length === 0) fehler.push(`${name}: mindestens eine Kategorie angeben.`);
     for (const k of e.kategorien ?? []) {
       if (!KATEGORIEN.includes(k)) fehler.push(`${name}: Kategorie "${k}" unbekannt, erlaubt: ${KATEGORIEN.join(', ')}.`);

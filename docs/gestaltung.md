@@ -2,7 +2,9 @@
 
 Stil „Präziser Stahl“: technisch, klar, schlicht – wie sauber gekantetes Blech. Keine harten 0-mm-CAD-Ecken und nicht verspielt-rundgelutscht.
 
-**Hauptstil ist die Fläche** (seit 27.11.2026): durchgefärbte Formen im 64er-Raster, Details als Aussparung. Jedes Icon hat eine Fläche. Die Kontur im 24er-Raster ist Altbestand: Es gibt sie nur noch für zehn ältere Ceha-Zeichnungen, sie wird nicht weiter ausgebaut. Lucide wird nicht mehr verwendet.
+**Hauptstil ist die Fläche** (seit 27.11.2026): durchgefärbte Formen im 64er-Raster, Details als Aussparung. Dazu hat jedes Icon eine **Kontur** im 24er-Raster für kleine Größen und UI (Buttons, Listen, Formulare). Die Kontur folgt dem Motiv der Fläche, vereinfacht es aber. Lucide wird nicht verwendet.
+
+**Status je Stil:** Fläche und Kontur werden getrennt freigegeben (`"status": {"solid": "fertig", "outline": "entwurf"}` im Manifest). Die Flächen aus dem Marketing-Standard sind freigegeben, alle Konturen und die nachgezeichneten Flächen stehen auf Entwurf, bis sie durchgesehen sind.
 
 ## Prinzipien
 
@@ -41,9 +43,9 @@ Die Werte sind aus den freigegebenen Beispielen abgeleitet (Ordner „04 – ceh
 - Schmale Spinde (Doppel-, Feuerwehrspind, `lagerregal`) wirken neben den USP-Piktogrammen deutlich heller.
 - `alert-triangle`, `maximize`, `trending-down`, `building-2`: Ersatz für frühere Lucide-Icons, nach den Regeln oben gezeichnet, noch nicht vom Marketing abgenommen.
 
-## Kontur (Altbestand)
+## Kontur
 
-Gilt nur für die zehn vorhandenen Konturen (`archive`, `bed-double`, `clock`, `factory`, `folder`, `grid`, `shield-check`, `truck`, `users`, `wrench`). Neue Motive werden nicht mehr als Kontur gezeichnet.
+Gleiche Motive wie die Fläche, aber auf die Merkmale reduziert, die bei 16–24 px lesbar bleiben (z. B. Lochblech als wenige Punkte, ein Schlitz statt drei).
 
 | Regel | Wert |
 |---|---|

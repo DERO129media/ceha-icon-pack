@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { ergaenzeSperrliste, fehlendeNamen } from '../scripts/lib/namen.ts';
 import { pruefeManifest, type IconEintrag, type Manifest } from '../scripts/lib/manifest.ts';
 
-const eintrag = (aliases: string[] = []): IconEintrag => ({ titel: 'T', kategorien: ['inhalte'], aliases, status: 'entwurf', verwendungen: 0, tags: [] });
+const eintrag = (aliases: string[] = []): IconEintrag => ({ titel: 'T', kategorien: ['inhalte'], aliases, status: {}, verwendungen: 0, tags: [] });
 
 describe('Namen verschwinden nie', () => {
   it('meldet veröffentlichte Namen, die im Manifest fehlen', () => {
@@ -29,5 +29,11 @@ describe('Namen verschwinden nie', () => {
 describe('pruefeManifest', () => {
   it('meldet doppelt vergebene Namen und Aliase', () => {
     expect(pruefeManifest({ key: eintrag(['schluessel']), lock: eintrag(['schluessel']) }).join()).toMatch(/doppelt/);
+  });
+
+  it('verlangt den Status je Stil und nur bekannte Werte', () => {
+    expect(pruefeManifest({ a: { ...eintrag(), status: 'fertig' as never } }).join()).toMatch(/je Stil/);
+    expect(pruefeManifest({ a: { ...eintrag(), status: { solid: 'fertig', outline: 'vorlage' as never } } }).join()).toMatch(/"vorlage" unbekannt/);
+    expect(pruefeManifest({ a: { ...eintrag(), status: { solid: 'fertig', outline: 'entwurf' } } })).toEqual([]);
   });
 });

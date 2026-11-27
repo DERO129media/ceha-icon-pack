@@ -69,10 +69,11 @@ export function Leiste({ e, setze, sichtbare }: Props) {
         <Segment name="Reihenfolge" wert={e.reihenfolge} aendern={(reihenfolge) => setze({ reihenfolge })} optionen={[{ wert: 'kategorien', text: 'Kategorien' }, { wert: 'verwendung', text: 'Häufigkeit' }]} />
       </section>
       <section className="leiste-gruppe">
-        <h2>Alle herunterladen</h2>
+        <h2>Herunterladen</h2>
+        <p className="leiste-hinweis">Alle {sichtbare.length} sichtbaren Icons in {e.stil === 'solid' ? 'Fläche' : 'Kontur'}, {farbe.name}.</p>
         <div className="formate">
           {FORMATE.map((f) => (
-            <label key={f.id} className="format" title={f.hinweis}>
+            <label key={f.id} className="format" title={f.hinweis} data-aktiv={formate.includes(f.id)}>
               <input type="checkbox" checked={formate.includes(f.id)} onChange={(ev) => setFormate(ev.target.checked ? [...formate, f.id] : formate.filter((x) => x !== f.id))} />
               {f.name}
             </label>
@@ -91,7 +92,7 @@ export function Leiste({ e, setze, sichtbare }: Props) {
           </label>
         )}
         <Knopf variante="primaer" onClick={zipLaden} disabled={laeuft || formate.length === 0 || sichtbare.length === 0}>
-          {laeuft ? 'ZIP wird erstellt …' : `${sichtbare.length} Icons als ZIP laden`}
+          {laeuft ? 'ZIP wird erstellt …' : 'Als ZIP herunterladen'}
         </Knopf>
       </section>
     </aside>
