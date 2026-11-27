@@ -55,4 +55,5 @@ Aus den Quelldateien erzeugt `pnpm build` das npm-Paket `@ceha/icons` (SVG, Icon
 - `scripts/lib/flaeche.ts` – Umwandlung in eine Fläche für Druck und Randprüfung
 - `packages/icons/vorlagen/` – handgeschriebene React-Vorlage, wird in den Build kopiert
 - `apps/dashboard/` – Konfigurator (React, Vite)
+- `apps/dashboard/src/agentenAnleitung.ts` – Text des Knopfs „Anleitung für KI-Agent kopieren“; bei Änderungen an Einbindung oder Stilregeln mitpflegen
 - `tests/` – Vitest

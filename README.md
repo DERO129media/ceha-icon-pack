@@ -7,6 +7,8 @@ Hinweise für KI-Agenten und Regeln für Beiträge: [AGENTS.md](AGENTS.md).
 
 - **Konfigurator** (`apps/dashboard`): alle Icons ansehen, Fläche oder Kontur wählen,
   in Brand-Farben, Schwarz oder Weiß als SVG, PNG, PDF, EPS oder ZIP herunterladen.
+  Oben rechts kopiert „Anleitung für KI-Agent kopieren“ einen Text für eine neue KI-Session
+  in einem anderen Projekt: nur dieses Pack verwenden, Einbindung, Stilregeln, alle Icon-Namen.
 - **npm-Paket** `@ceha/icons` (`packages/icons`): SVGs, Iconify-Set für astro-icon,
   React-Komponenten mit der Schnittstelle von lucide-react, SVG-Sprite.
 

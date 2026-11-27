@@ -6,6 +6,7 @@ import { Segment } from '../ui/Segment';
 import { Knopf } from '../ui/Knopf';
 import { FORMATE, dateiInhalt, dateiname, speichere, type Format } from '../export/dateien';
 import { svgText } from '../export/svg';
+import { kopiere } from '../ui/kopieren';
 
 interface Props {
   icon: Icon;
@@ -39,8 +40,7 @@ export function Zeichnungsblatt({ icon, stil, farbe, setzeStil, schliessen }: Pr
   }
 
   async function kopieren(text: string, was: string) {
-    await navigator.clipboard.writeText(text);
-    setMeldung(`${was} kopiert`);
+    setMeldung((await kopiere(text)) ? `${was} kopiert` : `${was} ließ sich nicht kopieren – der Browser erlaubt keinen Zugriff auf die Zwischenablage.`);
     setTimeout(() => setMeldung(''), 1800);
   }
 
