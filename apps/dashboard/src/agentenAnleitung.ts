@@ -20,15 +20,23 @@ export function agentenAnleitung(konfigurator: string): string {
   return `Verwende in diesem Projekt für alle Icons ausschließlich das Ceha-Icon-Pack (Ceha Deutschland GmbH, Version ${DATEN.version}).
 Keine Lucide-, Heroicons-, Font-Awesome- oder anderen Icon-Sets und keine selbst gezeichneten Icons.
 
-Quelle und Regeln: ${REPO_URL} (privat; AGENTS.md, docs/gestaltung.md)
+Quelle und Regeln: ${REPO_URL} (AGENTS.md, docs/gestaltung.md)
 Konfigurator zum Ansehen und Herunterladen: ${konfigurator}
 
 EINBINDEN
-Paket @ceha/icons. Es ist noch nicht in einer Registry veröffentlicht. Bis dahin: Repo klonen, dort
-\`pnpm install && pnpm build\`, dann in packages/icons \`pnpm pack\` und den Tarball als Abhängigkeit
-einbinden (z. B. "file:./vendor/ceha-icons-${DATEN.version}.tgz"). Für einzelne Icons ohne Paket:
-SVG im Konfigurator herunterladen.
-- Astro (astro-icon): Paket unter dem Namen "@iconify-json/ceha" einbinden, dann <Icon name="ceha:<name>" />
+Das Paket liegt in GitHub Packages als @dero129media/ceha-icons und wird im Projekt unter dem
+Namen @ceha/icons eingebunden (npm-Alias), damit Importe kurz bleiben. GitHub Packages verlangt
+auch für öffentliche Pakete einen Token.
+1. .npmrc im Projekt (Token mit Recht read:packages in der Umgebungsvariable GITHUB_TOKEN,
+   z. B. nach \`gh auth refresh -s read:packages\`: \`export GITHUB_TOKEN=$(gh auth token)\`;
+   den Token nie in die Datei schreiben):
+   @dero129media:registry=https://npm.pkg.github.com
+   //npm.pkg.github.com/:_authToken=\${GITHUB_TOKEN}
+2. Installieren: \`pnpm add @ceha/icons@npm:@dero129media/ceha-icons@^${DATEN.version}\`
+   In CI braucht der Workflow ebenfalls einen Token mit read:packages.
+Für einzelne Icons ohne Paket: SVG im Konfigurator herunterladen.
+- Astro (astro-icon): zusätzlich \`pnpm add @iconify-json/ceha@npm:@dero129media/ceha-icons@^${DATEN.version}\`,
+  dann <Icon name="ceha:<name>" />
 - React: import { Wrench } from '@ceha/icons/react'; <Wrench size={32} />
   Props wie lucide-react (size, color, className, title), zusätzlich variant="solid" | "outline".
 - Ohne Framework: @ceha/icons/svg/solid/<name>.svg, @ceha/icons/svg/outline/<name>.svg

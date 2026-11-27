@@ -65,11 +65,25 @@ immer ein Mensch.
 
 ## Einbinden
 
-**Astro (astro-icon)** – das Paket unter dem Alias `@iconify-json/ceha` installieren,
+Das Paket liegt in **GitHub Packages** als `@dero129media/ceha-icons` (der Scope muss
+dort dem GitHub-Konto entsprechen; installieren geht dort auch bei öffentlichen Paketen nur mit Token). In Projekten wird es unter dem kurzen Namen `@ceha/icons`
+eingebunden. Dafür eine `.npmrc` anlegen; der Token mit Recht `read:packages` kommt aus der
+Umgebung (z. B. `gh auth refresh -s read:packages`, dann `export GITHUB_TOKEN=$(gh auth token)`):
+
+```ini
+@dero129media:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+```
+
+```sh
+pnpm add @ceha/icons@npm:@dero129media/ceha-icons@^0.1.0
+```
+
+**Astro (astro-icon)** – zusätzlich unter dem Alias `@iconify-json/ceha` installieren,
 dann findet astro-icon das Set als `ceha:`:
 
-```json
-"@iconify-json/ceha": "npm:@ceha/icons@^0.1.0"
+```sh
+pnpm add @iconify-json/ceha@npm:@dero129media/ceha-icons@^0.1.0
 ```
 
 Der Name ohne Endung zeigt immer die Fläche. Mit Endung gibt es einen bestimmten Stil:
@@ -92,10 +106,15 @@ import { Wrench, Truck } from '@ceha/icons/react';
 **Ohne Framework** – `@ceha/icons/svg/solid/wrench.svg` oder das Sprite
 `@ceha/icons/sprite.svg` (`<use href="sprite.svg#ceha-wrench"/>`).
 
+## Neue Version veröffentlichen
+
+1. Version in `packages/icons/package.json` erhöhen (neue Icons: Minor, Korrekturen: Patch).
+2. Committen, dann Tag setzen und pushen: `git tag v0.2.0 && git push origin v0.2.0`.
+3. Der Workflow `.github/workflows/paket.yml` baut, prüft und veröffentlicht. Passt der Tag
+   nicht zur Version im Paket, bricht er ab.
+
 ## Offen
 
-- **Verteilung des Pakets:** noch nicht veröffentlicht. Möglich sind GitHub Packages (privat)
-  oder ein Release-Tarball (`pnpm pack` in `packages/icons`).
 - **Hosting des Konfigurators:** z. B. Cloudflare Pages hinter Cloudflare Access.
 - **Druckfarben:** CMYK- oder Pantone-Werte für Brand Blue, Brand Dark und Brand Light fehlen.
   Bis dahin enthalten PDF und EPS dieser Farben RGB. Eintragen in `apps/dashboard/src/design/farben.ts`.

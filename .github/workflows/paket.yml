@@ -1,0 +1,45 @@
+# Veröffentlicht das Paket @dero129media/ceha-icons in GitHub Packages.
+# Auslöser: ein Tag v<version> (muss zu packages/icons/package.json passen) oder Start von Hand.
+name: Paket veröffentlichen
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  veroeffentlichen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          registry-url: https://npm.pkg.github.com
+          scope: '@dero129media'
+
+      - run: pnpm install --frozen-lockfile
+
+      # Erst bauen (erzeugt Paket und Dashboard-Daten), dann alles prüfen
+      - run: pnpm build
+      - run: pnpm pruefen
+
+      - name: Version passt zum Tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          version=$(node -p "require('./packages/icons/package.json').version")
+          test "v$version" = "$GITHUB_REF_NAME" || { echo "Tag $GITHUB_REF_NAME passt nicht zu Version $version"; exit 1; }
+
+      - name: Veröffentlichen
+        working-directory: packages/icons
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -9,7 +9,9 @@ Icon-Pack der Ceha Deutschland GmbH in zwei Stilen:
 - **Fläche** (`icons/solid/*.svg`, 64er-Raster): Hauptstil, Vorlagen kommen vom Marketing.
 - **Kontur** (`icons/outline/*.svg`, 24er-Raster, Strich 1,35): für kleine Größen und UI.
 
-Aus den Quelldateien erzeugt `pnpm build` das npm-Paket `@ceha/icons` (SVG, Iconify-Set, React, Sprite) und die Daten für den Konfigurator (`apps/dashboard`).
+Aus den Quelldateien erzeugt `pnpm build` das npm-Paket (SVG, Iconify-Set, React, Sprite) und die Daten für den Konfigurator (`apps/dashboard`). Das Paket heißt in GitHub Packages `@dero129media/ceha-icons` und wird in Projekten per npm-Alias als `@ceha/icons` eingebunden.
+
+**Veröffentlichen:** Version in `packages/icons/package.json` erhöhen, Tag `v<version>` pushen – der Workflow `.github/workflows/paket.yml` baut, prüft und veröffentlicht. Nur auf ausdrücklichen Wunsch eines Menschen veröffentlichen.
 
 ## Befehle
 

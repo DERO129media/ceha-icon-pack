@@ -1,9 +1,17 @@
 {
-  "name": "@ceha/icons",
+  "name": "@dero129media/ceha-icons",
   "version": "0.1.0",
-  "description": "Eigenes Icon-Pack der Ceha Deutschland GmbH: SVG, Iconify-Set für astro-icon, React-Komponenten.",
+  "description": "Icon-Pack der Ceha Deutschland GmbH: Fläche (64er-Raster) und Kontur (24er-Raster) als SVG, Iconify-Set für astro-icon, React-Komponenten und Sprite.",
   "type": "module",
   "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DERO129media/ceha-icon-pack.git",
+    "directory": "packages/icons"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "sideEffects": false,
   "exports": {
     "./react": {
@@ -16,11 +24,21 @@
     "./svg/*": "./svg/*",
     "./package.json": "./package.json"
   },
-  "files": ["svg", "react", "icons.json", "meta.json", "sprite.svg", "LICENSE", "README.md"],
+  "files": [
+    "svg",
+    "react",
+    "icons.json",
+    "meta.json",
+    "sprite.svg",
+    "LICENSE",
+    "README.md"
+  ],
   "peerDependencies": {
     "react": ">=18"
   },
   "peerDependenciesMeta": {
-    "react": { "optional": true }
+    "react": {
+      "optional": true
+    }
   }
 }
