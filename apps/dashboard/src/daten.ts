@@ -1,7 +1,7 @@
 import roh from './generated/icons.json';
 
 export type Stil = 'outline' | 'solid';
-export type Status = 'vorlage' | 'entwurf' | 'fertig';
+export type Status = 'entwurf' | 'fertig';
 export type Kategorie = 'inhalte' | 'produkte' | 'unternehmen';
 
 export interface Flaeche {
@@ -23,11 +23,9 @@ export interface Icon {
   titel: string;
   kategorien: Kategorie[];
   aliases: string[];
-  vorlage: string | null;
   status: Status;
   verwendungen: number;
   tags: string[];
-  lucide: string | null;
   stile: Partial<Record<Stil, StilDaten>>;
 }
 
@@ -40,7 +38,6 @@ export const KATEGORIE_NAMEN: Record<Kategorie, string> = {
 };
 
 export const STATUS_NAMEN: Record<Status, string> = {
-  vorlage: 'Lucide-Vorlage',
   entwurf: 'Entwurf',
   fertig: 'Ceha',
 };

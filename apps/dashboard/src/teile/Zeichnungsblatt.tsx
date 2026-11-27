@@ -21,7 +21,6 @@ const komponente = (n: string) => n.split('-').map((t) => t[0].toUpperCase() + t
 export function Zeichnungsblatt({ icon, stil, farbe, setzeStil, schliessen }: Props) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [raster, setRaster] = useState(true);
-  const [vorlage, setVorlage] = useState(false);
   const [pngGroesse, setPngGroesse] = useState(512);
   const [meldung, setMeldung] = useState('');
   const s = wirksamerStil(icon, stil);
@@ -57,9 +56,6 @@ export function Zeichnungsblatt({ icon, stil, farbe, setzeStil, schliessen }: Pr
           <label className="schalter">
             <input type="checkbox" checked={raster} onChange={(e) => setRaster(e.target.checked)} /> Raster und Hilfslinien
           </label>
-          <label className="schalter" data-aus={!icon.lucide || s !== 'outline'}>
-            <input type="checkbox" checked={vorlage} disabled={!icon.lucide || s !== 'outline'} onChange={(e) => setVorlage(e.target.checked)} /> Lucide-Vorlage einblenden
-          </label>
           <Knopf variante="still" onClick={() => dialog.current?.close()} aria-label="Schließen">
             Schließen
           </Knopf>
@@ -75,7 +71,6 @@ export function Zeichnungsblatt({ icon, stil, farbe, setzeStil, schliessen }: Pr
                 dangerouslySetInnerHTML={{ __html: daten.koerper }}
               />
             )}
-            {vorlage && s === 'outline' && icon.lucide && <g className="vorlage-linie" fill="none" dangerouslySetInnerHTML={{ __html: icon.lucide }} />}
           </svg>
           {s !== stil && (
             <p className="blatt-ersatz">
@@ -104,8 +99,8 @@ export function Zeichnungsblatt({ icon, stil, farbe, setzeStil, schliessen }: Pr
             <tr>
               <th>Aliase</th>
               <td>{icon.aliases.length ? icon.aliases.join(', ') : 'keine'}</td>
-              <th>Vorlage</th>
-              <td>{icon.vorlage ? `lucide:${icon.vorlage}` : 'eigenes Motiv'}</td>
+              <th>Kategorien</th>
+              <td>{icon.kategorien.join(', ')}</td>
             </tr>
             <tr>
               <th>Stile</th>
@@ -116,11 +111,7 @@ export function Zeichnungsblatt({ icon, stil, farbe, setzeStil, schliessen }: Pr
             <tr>
               <th>Profil</th>
               <td colSpan={3}>
-                {s === 'solid'
-                  ? 'Ceha Fläche: Details als Aussparung, gemeinsame Standlinie, Blech-Radien'
-                  : icon.status === 'vorlage'
-                    ? 'Lucide-Vorlage: Strich 1,35, rund'
-                    : 'Ceha „Präziser Stahl“: Strich 1,35, rund, Blech-Radien'}
+                {s === 'solid' ? 'Ceha Fläche: Details als Aussparung, gemeinsame Standlinie, Blech-Radien' : 'Ceha Kontur (Altbestand): Strich 1,35, rund, Blech-Radien'}
               </td>
             </tr>
             <tr>
@@ -182,7 +173,7 @@ function Code({ titel, code, kopieren }: { titel: string; code: string; kopieren
   );
 }
 
-/** 24er-Raster mit 1 px Randzone und den Lucide-Hilfsformen (Kreis, Quadrat, Hoch- und Querformat) */
+/** 24er-Raster der Kontur mit 1 px Randzone und Hilfsformen (Kreis, Quadrat, Hoch- und Querformat) */
 function Hilfslinien() {
   const linien = Array.from({ length: 25 }, (_, i) => i);
   return (

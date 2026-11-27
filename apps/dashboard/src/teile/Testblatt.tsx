@@ -6,8 +6,7 @@ const GROESSEN = [16, 20, 24, 32, 48];
 
 /**
  * Prüfansicht: Icons nebeneinander in echten Größen. Hier fällt auf, ob alle
- * gleich schwer wirken, ob Details bei 16 px zulaufen und wie weit sich ein
- * Motiv von seiner Lucide-Vorlage entfernt hat.
+ * gleich schwer wirken und ob Details in kleinen Größen zulaufen.
  */
 export function Testblatt({ icons, stil, farbe, oeffnen }: { icons: Icon[]; stil: Stil; farbe: { hex: string; hell: boolean }; oeffnen: (n: string) => void }) {
   return (
@@ -23,7 +22,7 @@ export function Testblatt({ icons, stil, farbe, oeffnen }: { icons: Icon[]; stil
         ))}
       </section>
       <section>
-        <h2>Größen und Vorlage</h2>
+        <h2>Größen</h2>
         <table className="testblatt-tabelle">
           <thead>
             <tr>
@@ -31,7 +30,6 @@ export function Testblatt({ icons, stil, farbe, oeffnen }: { icons: Icon[]; stil
               {GROESSEN.map((g) => (
                 <th key={g}>{g} px</th>
               ))}
-              <th>Lucide 24 px</th>
             </tr>
           </thead>
           <tbody>
@@ -50,11 +48,6 @@ export function Testblatt({ icons, stil, farbe, oeffnen }: { icons: Icon[]; stil
                     <IconBild icon={i} stil={stil} groesse={g} farbe={farbe.hex} />
                   </td>
                 ))}
-                <td>
-                  {i.lucide && (
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="testblatt-lucide" aria-hidden="true" dangerouslySetInnerHTML={{ __html: i.lucide }} />
-                  )}
-                </td>
               </tr>
             ))}
           </tbody>

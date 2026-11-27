@@ -12,7 +12,7 @@ for (const w of bericht.warnungen) console.warn(`⚠ ${w}`);
 for (const f of bericht.fehler) console.error(`✗ ${f}`);
 
 const anzahl = bericht.icons.length;
-const eigene = bericht.icons.filter((i) => i.eintrag.status !== 'vorlage').length;
+const fertig = bericht.icons.filter((i) => i.eintrag.status === 'fertig').length;
 const flaechen = bericht.icons.filter((i) => i.stile.solid).length;
 const dauer = Math.round(performance.now() - start);
 
@@ -21,4 +21,4 @@ if (bericht.fehler.length > 0) {
   process.exit(1);
 }
 if (bericht.neueNamen.length > 0) console.log(`Neu in names.lock.json: ${bericht.neueNamen.join(', ')}`);
-console.log(`✓ ${anzahl} Icons, davon ${eigene} eigene, ${flaechen} als Fläche (Hauptstil) – ${nurPruefen ? 'geprüft' : 'gebaut'} in ${dauer} ms.`);
+console.log(`✓ ${anzahl} Icons, davon ${fertig} freigegeben, ${flaechen} als Fläche (Hauptstil) – ${nurPruefen ? 'geprüft' : 'gebaut'} in ${dauer} ms.`);

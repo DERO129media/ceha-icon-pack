@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-export const STATUS = ['vorlage', 'entwurf', 'fertig'] as const;
+export const STATUS = ['entwurf', 'fertig'] as const;
 export type Status = (typeof STATUS)[number];
 
 export const KATEGORIEN = ['inhalte', 'produkte', 'unternehmen'] as const;
@@ -14,11 +14,9 @@ export interface IconEintrag {
   /** Deutscher Anzeigename im Dashboard */
   titel: string;
   kategorien: Kategorie[];
-  /** Weitere Namen, unter denen das Icon erreichbar ist (z. B. neue Lucide-Namen) */
+  /** Weitere Namen, unter denen das Icon erreichbar ist (z. B. frühere Namen) */
   aliases: string[];
-  /** Name des Lucide-Icons, an dem sich das Motiv orientiert */
-  vorlage: string | null;
-  /** vorlage = Lucide-Kopie, entwurf = eigene Zeichnung in Arbeit, fertig = freigegeben */
+  /** entwurf = Zeichnung in Arbeit, fertig = freigegeben */
   status: Status;
   /** Verwendungen auf ceha-stahlmoebel.de, dient als Priorität */
   verwendungen: number;

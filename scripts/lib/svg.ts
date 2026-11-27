@@ -5,13 +5,11 @@ import type { Stil } from './manifest.ts';
 export type Knoten = [tag: string, attrs: Record<string, string>];
 
 /**
- * Die Wurzel jedes Icons ist durch Stil und Profil festgelegt, damit alle Icons
+ * Die Wurzel jedes Icons ist durch seinen Stil festgelegt, damit alle Icons
  * gleich aufgebaut sind und sich gleich einfärben lassen.
  *
  * solid (Hauptstil): reine Fläche im 64er-Raster, Details als Aussparung (evenodd), keine Striche
- * outline (Altbestand): Strich 1,35 im 24er-Raster, runde Enden und Ecken
- *   ceha:    eigene Zeichnungen („Präziser Stahl“)
- *   vorlage: Lucide-Kopien als Platzhalter
+ * outline (Altbestand): Strich 1,35 im 24er-Raster, runde Enden und Ecken („Präziser Stahl“)
  *
  * Strichstärke und Raster stehen nur hier.
  */
@@ -19,29 +17,21 @@ export const STRICH = '1.35';
 export const RASTER: Record<Stil, number> = { solid: 64, outline: 24 };
 /** Mindestabstand zum Rand je Raster (Warnung), entspricht 1 bzw. 1,5 Einheiten im 24er-Maß */
 export const RANDZONE: Record<Stil, number> = { solid: 4, outline: 1 };
-export const PROFILE = ['ceha', 'vorlage'] as const;
-export type Profil = (typeof PROFILE)[number];
-
-const ENDEN: Record<Profil, { cap: string; join: string }> = {
-  ceha: { cap: 'round', join: 'round' },
-  vorlage: { cap: 'round', join: 'round' },
-};
-
-export function wurzelFuer(stil: Stil, profil: Profil): Record<string, string> {
+export function wurzelFuer(stil: Stil): Record<string, string> {
   if (stil === 'solid') return { fill: 'currentColor' };
   return {
     fill: 'none',
     stroke: 'currentColor',
     'stroke-width': STRICH,
-    'stroke-linecap': ENDEN[profil].cap,
-    'stroke-linejoin': ENDEN[profil].join,
+    'stroke-linecap': 'round',
+    'stroke-linejoin': 'round',
   };
 }
 
 /** Einzelne Elemente dürfen Enden und Ecken abweichend setzen, z. B. für Punkte. */
 const ENDEN_ERLAUBT = { 'stroke-linecap': ['butt', 'round', 'square'], 'stroke-linejoin': ['miter', 'round', 'bevel'] };
 
-const wurzelErlaubt = (stil: Stil) => new Set(['xmlns', 'width', 'height', 'viewBox', ...Object.keys(wurzelFuer(stil, 'ceha'))]);
+const wurzelErlaubt = (stil: Stil) => new Set(['xmlns', 'width', 'height', 'viewBox', ...Object.keys(wurzelFuer(stil))]);
 const STRICH_ATTRIBUTE = ['stroke-width', 'stroke-linecap', 'stroke-linejoin'];
 
 const GEOMETRIE: Record<string, string[]> = {
@@ -61,7 +51,7 @@ export interface SvgErgebnis {
 }
 
 /** Liest eine Icon-Datei und prüft sie gegen die Raster-Regeln. */
-export function pruefeSvg(quelltext: string, stil: Stil, profil: Profil): SvgErgebnis {
+export function pruefeSvg(quelltext: string, stil: Stil): SvgErgebnis {
   const fehler: string[] = [];
   let wurzel: INode;
   try {
@@ -77,7 +67,7 @@ export function pruefeSvg(quelltext: string, stil: Stil, profil: Profil): SvgErg
   for (const groesse of ['width', 'height'] as const) {
     if (a[groesse] !== undefined && a[groesse] !== '24') fehler.push(`${groesse} muss 24 sein oder fehlen.`);
   }
-  for (const [k, v] of Object.entries(wurzelFuer(stil, profil))) {
+  for (const [k, v] of Object.entries(wurzelFuer(stil))) {
     if (a[k] !== v) fehler.push(`<svg> braucht ${k}="${v}" (ist "${a[k] ?? 'fehlt'}").`);
   }
   const erlaubt = wurzelErlaubt(stil);

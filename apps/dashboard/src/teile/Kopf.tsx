@@ -2,7 +2,7 @@ import { DATEN } from '../daten';
 
 export function Kopf() {
   const alle = DATEN.icons.length;
-  const eigene = DATEN.icons.filter((i) => i.status !== 'vorlage').length;
+  const fertig = DATEN.icons.filter((i) => i.status === 'fertig').length;
   const flaechen = DATEN.icons.filter((i) => i.stile.solid).length;
   return (
     <header className="kopf">
@@ -11,7 +11,7 @@ export function Kopf() {
         <span className="kopf-version">Version {DATEN.version}</span>
       </div>
       <div className="kopf-fortschritt" aria-label="Fortschritt des Icon-Packs">
-        <Balken text="Eigene Zeichnungen" wert={eigene} von={alle} />
+        <Balken text="Freigegeben" wert={fertig} von={alle} />
         <Balken text="Als Fläche gezeichnet" wert={flaechen} von={alle} />
       </div>
     </header>

@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { ergaenzeSperrliste, fehlendeNamen } from '../scripts/lib/namen.ts';
 import { pruefeManifest, type IconEintrag, type Manifest } from '../scripts/lib/manifest.ts';
 
-const eintrag = (aliases: string[] = []): IconEintrag => ({ titel: 'T', kategorien: ['inhalte'], aliases, vorlage: null, status: 'vorlage', verwendungen: 0, tags: [] });
+const eintrag = (aliases: string[] = []): IconEintrag => ({ titel: 'T', kategorien: ['inhalte'], aliases, status: 'entwurf', verwendungen: 0, tags: [] });
 
 describe('Namen verschwinden nie', () => {
   it('meldet veröffentlichte Namen, die im Manifest fehlen', () => {

@@ -13,14 +13,12 @@
     "typecheck": "tsc -p tsconfig.json && pnpm --filter dashboard typecheck",
     "dev": "pnpm build && pnpm --filter dashboard dev",
     "dashboard:build": "pnpm build && pnpm --filter dashboard build",
-    "vorlage": "node scripts/vorlage.ts",
     "pruefen": "pnpm check && pnpm typecheck && pnpm test"
   },
   "devDependencies": {
     "@types/node": "^26.6.10",
     "@types/react": "^19.3.2",
     "@types/react-dom": "^19.3.0",
-    "lucide-static": "^1.80.0",
     "pathkit-wasm": "^1.0.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",

@@ -2,7 +2,7 @@
 
 Stil „Präziser Stahl“: technisch, klar, schlicht – wie sauber gekantetes Blech. Keine harten 0-mm-CAD-Ecken und nicht verspielt-rundgelutscht.
 
-**Hauptstil ist die Fläche** (seit 27.11.2026): durchgefärbte Formen im 64er-Raster, Details als Aussparung. Die Kontur im 24er-Raster ist Altbestand. Sie steht nur noch dort ein, wo die Fläche noch nicht gezeichnet ist, und wird nicht weiter ausgebaut.
+**Hauptstil ist die Fläche** (seit 27.11.2026): durchgefärbte Formen im 64er-Raster, Details als Aussparung. Jedes Icon hat eine Fläche. Die Kontur im 24er-Raster ist Altbestand: Es gibt sie nur noch für zehn ältere Ceha-Zeichnungen, sie wird nicht weiter ausgebaut. Lucide wird nicht mehr verwendet.
 
 ## Prinzipien
 
@@ -39,10 +39,11 @@ Die Werte sind aus den freigegebenen Beispielen abgeleitet (Ordner „04 – ceh
 - `feuerwehrspind`: als Rahmen mit ausgesparten Türen gebaut, ohne Abdeckplatte und Sockel; der Helm ragt 0,4 in die Randzone (Build-Warnung).
 - `aktenregal`, `kleiderschrank-wohnheim`: ebenfalls als Rahmen gebaut statt aus Türblättern.
 - Schmale Spinde (Doppel-, Feuerwehrspind, `lagerregal`) wirken neben den USP-Piktogrammen deutlich heller.
+- `alert-triangle`, `maximize`, `trending-down`, `building-2`: Ersatz für frühere Lucide-Icons, nach den Regeln oben gezeichnet, noch nicht vom Marketing abgenommen.
 
 ## Kontur (Altbestand)
 
-Gilt nur noch für Icons ohne Fläche. Neue Motive werden nicht mehr als Kontur gezeichnet.
+Gilt nur für die zehn vorhandenen Konturen (`archive`, `bed-double`, `clock`, `factory`, `folder`, `grid`, `shield-check`, `truck`, `users`, `wrench`). Neue Motive werden nicht mehr als Kontur gezeichnet.
 
 | Regel | Wert |
 |---|---|
@@ -68,6 +69,6 @@ Gilt nur noch für Icons ohne Fläche. Neue Motive werden nicht mehr als Kontur 
 - Erlaubte Elemente: `path`, `circle`, `ellipse`, `rect`, `line`, `polyline`, `polygon`, `g`.
 - Nicht erlaubt: feste Farben, `clip-rule`, `transform`, `style`, `class`, `id`, Text, Bilder, Masken, Verläufe.
 - Nichts ragt über das Raster. Eigene Icons halten die Randzone ein (Warnung).
-- Jedes Icon hat mindestens eine Zeichnung; fehlt die Fläche, steht die Kontur ein.
+- Jedes Icon hat mindestens eine Zeichnung (Warnung, wenn ein freigegebenes Icon keine Fläche hat).
 
 Quellen der Prinzipien: Streamline, „The five rules of good icon design“; Helena Zhang, „7 Principles of Icon Design“ (UX Collective).

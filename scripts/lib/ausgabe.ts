@@ -16,8 +16,6 @@ export interface FertigesIcon {
   name: string;
   eintrag: IconEintrag;
   stile: Partial<Record<Stil, StilDaten>>;
-  /** Inhalt des Lucide-Originals zum Vergleich im Dashboard */
-  lucide: string | null;
 }
 
 /** Endungen für einen bestimmten Stil. Der Name ohne Endung zeigt immer den Hauptstil. */
@@ -61,7 +59,7 @@ export function schreibePaket(paketDir: string, icons: FertigesIcon[], version: 
     aliases: Record<string, { parent: string }>;
   } = {
     prefix: 'ceha',
-    info: { name: 'Ceha Icons', total: icons.length, version, author: { name: 'Ceha Deutschland GmbH' }, license: { title: 'Intern, enthält Lucide (ISC)' }, height: 24 },
+    info: { name: 'Ceha Icons', total: icons.length, version, author: { name: 'Ceha Deutschland GmbH' }, license: { title: 'Intern, Ceha Deutschland GmbH' }, height: 24 },
     width: 24,
     height: 24,
     icons: {},
@@ -94,7 +92,6 @@ export function schreibeDashboardDaten(datei: string, icons: FertigesIcon[], ver
     icons: icons.map((i) => ({
       name: i.name,
       ...i.eintrag,
-      lucide: i.lucide,
       stile: Object.fromEntries(
         Object.entries(i.stile).map(([stil, s]) => [
           stil,

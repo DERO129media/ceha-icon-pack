@@ -137,7 +137,6 @@
 .hilfsform > * { stroke-width: 1px; vector-effect: non-scaling-stroke; }
 .blatt-zeichnung[data-dunkel='true'] .hilfslinien line { stroke: rgb(255 255 255 / 0.12); }
 .blatt-zeichnung[data-dunkel='true'] .hilfslinien .randzone { fill: rgb(255 255 255 / 0.06); }
-.vorlage-linie * { stroke: var(--warnung); stroke-width: 1.5px; vector-effect: non-scaling-stroke; fill: none; stroke-dasharray: 4 3; }
 
 .schriftfeld { grid-area: schriftfeld; width: 100%; border-collapse: collapse; font-size: 13px; align-self: start; }
 .schriftfeld th, .schriftfeld td { border: 1px solid var(--text); padding: 6px 10px; text-align: left; vertical-align: top; }
@@ -180,5 +179,4 @@
 .testblatt-name { padding: 0; border: 0; background: none; font-weight: 600; cursor: pointer; display: block; }
 .testblatt-name:hover { color: var(--brand); }
 .testblatt-status { font-size: 12px; color: var(--gray-500); }
-.testblatt-lucide { color: var(--gray-500); }
 .testblatt[data-dunkel='true'] .testblatt-tabelle th, .testblatt[data-dunkel='true'] .testblatt-tabelle td { border-color: rgb(255 255 255 / 0.12); }
