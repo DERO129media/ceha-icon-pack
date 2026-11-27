@@ -12,8 +12,9 @@
   grid-area: kopf;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: var(--abstand-8);
+  gap: var(--abstand-3) var(--abstand-8);
   padding: var(--abstand-4) var(--abstand-8);
   background: var(--brand-dark);
   color: var(--weiss);
@@ -22,7 +23,8 @@
 .kopf-marke h1 { font-size: 22px; font-weight: 700; }
 .kopf-version { color: var(--weiss-72); font-size: 13px; }
 .kopf-fortschritt { display: flex; gap: var(--abstand-8); margin-left: auto; }
-.kopf-knopf { min-height: 36px; padding: 0 var(--abstand-4); border: 1px solid rgb(255 255 255 / 0.4); border-radius: var(--radius); background: transparent; color: var(--weiss); font-weight: 600; font-size: 13px; white-space: nowrap; cursor: pointer; transition: background-color 120ms, border-color 120ms; }
+.kopf-aktionen { display: flex; gap: var(--abstand-2); margin-left: auto; }
+.kopf-knopf { display: inline-flex; align-items: center; gap: var(--abstand-2); text-decoration: none; min-height: 36px; padding: 0 var(--abstand-4); border: 1px solid rgb(255 255 255 / 0.4); border-radius: var(--radius); background: transparent; color: var(--weiss); font-weight: 600; font-size: 13px; white-space: nowrap; cursor: pointer; transition: background-color 120ms, border-color 120ms; }
 .kopf-knopf:hover { background: rgb(255 255 255 / 0.12); border-color: var(--weiss); }
 .kopf-knopf:focus-visible { outline: 2px solid var(--weiss); outline-offset: 2px; }
 .vonhand { position: fixed; inset: 0; z-index: 10; margin: auto; width: min(720px, calc(100vw - 32px)); height: min(640px, calc(100vh - 32px)); display: grid; grid-template-rows: auto auto 1fr auto; gap: var(--abstand-3); justify-items: start; padding: var(--abstand-6); border: 1px solid var(--gray-300); border-radius: var(--radius); box-shadow: var(--schatten-mittel); color: var(--text); background: var(--weiss); }
