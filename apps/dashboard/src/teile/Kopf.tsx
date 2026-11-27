@@ -35,7 +35,7 @@ export function Kopf() {
         type="button"
         className="kopf-knopf"
         onClick={anleitungKopieren}
-        title="Kopiert eine Anleitung für eine neue KI-Session: nur dieses Icon-Pack verwenden, Einbindung, Stilregeln und alle Icon-Namen"
+        title="Kopiert eine kurze Anleitung für eine neue KI-Session: nur dieses Icon-Pack verwenden, Installation, Stilregeln und wo die Icon-Namen stehen"
       >
         {kopiert ? 'Kopiert ✓' : 'Anleitung für KI-Agent kopieren'}
       </button>
