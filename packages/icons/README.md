@@ -6,13 +6,23 @@ und als **Kontur** (24er-Raster, Strich 1,35) für kleine UI-Größen. Farbe üb
 ## Installieren
 
 Das Paket liegt in GitHub Packages, das auch für öffentliche Pakete einen Token verlangt.
-Im Projekt eine `.npmrc` anlegen; der Token (Recht `read:packages`) kommt aus der Umgebung,
-nie in die Datei:
+
+Im Projekt eine `.npmrc` (ohne Token, wird eingecheckt):
 
 ```ini
 @dero129media:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
+
+Einmalig pro Rechner in `~/.npmrc` – pnpm liest Token-Variablen nicht aus der Projekt-`.npmrc`:
+
+```ini
+//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+```
+
+Dazu in der Shell einen Token mit Recht `read:packages` setzen, z. B. nach
+`gh auth refresh -s read:packages`: `export NODE_AUTH_TOKEN=$(gh auth token)`.
+In GitHub Actions setzt `actions/setup-node` (mit `registry-url: https://npm.pkg.github.com`)
+die Zugangsdaten; `NODE_AUTH_TOKEN` kommt dort aus einem Secret.
 
 Unter dem kurzen Namen `@ceha/icons` einbinden (npm-Alias):
 

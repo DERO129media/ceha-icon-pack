@@ -67,13 +67,23 @@ immer ein Mensch.
 
 Das Paket liegt in **GitHub Packages** als `@dero129media/ceha-icons` (der Scope muss
 dort dem GitHub-Konto entsprechen; installieren geht dort auch bei öffentlichen Paketen nur mit Token). In Projekten wird es unter dem kurzen Namen `@ceha/icons`
-eingebunden. Dafür eine `.npmrc` anlegen; der Token mit Recht `read:packages` kommt aus der
-Umgebung (z. B. `gh auth refresh -s read:packages`, dann `export GITHUB_TOKEN=$(gh auth token)`):
+eingebunden.
+
+Im Projekt eine `.npmrc` (ohne Token, wird eingecheckt):
 
 ```ini
 @dero129media:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
+
+Einmalig pro Rechner in `~/.npmrc` – pnpm liest Token-Variablen nicht aus der Projekt-`.npmrc`:
+
+```ini
+//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+```
+
+Dazu einen Token mit Recht `read:packages` setzen, z. B. nach `gh auth refresh -s read:packages`:
+`export NODE_AUTH_TOKEN=$(gh auth token)`. Nicht `GITHUB_TOKEN` verwenden – solange diese
+Variable gesetzt ist, lässt sich gh nicht neu anmelden.
 
 ```sh
 pnpm add @ceha/icons@npm:@dero129media/ceha-icons@^0.1.0

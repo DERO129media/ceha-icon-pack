@@ -27,13 +27,16 @@ EINBINDEN
 Das Paket liegt in GitHub Packages als @dero129media/ceha-icons und wird im Projekt unter dem
 Namen @ceha/icons eingebunden (npm-Alias), damit Importe kurz bleiben. GitHub Packages verlangt
 auch für öffentliche Pakete einen Token.
-1. .npmrc im Projekt (Token mit Recht read:packages in der Umgebungsvariable GITHUB_TOKEN,
-   z. B. nach \`gh auth refresh -s read:packages\`: \`export GITHUB_TOKEN=$(gh auth token)\`;
-   den Token nie in die Datei schreiben):
+1. .npmrc im Projekt (wird eingecheckt, ohne Token):
    @dero129media:registry=https://npm.pkg.github.com
-   //npm.pkg.github.com/:_authToken=\${GITHUB_TOKEN}
-2. Installieren: \`pnpm add @ceha/icons@npm:@dero129media/ceha-icons@^${DATEN.version}\`
-   In CI braucht der Workflow ebenfalls einen Token mit read:packages.
+2. Token einmalig pro Rechner – NICHT in die Projekt-.npmrc (pnpm liest dort keine Token-Variablen):
+   in ~/.npmrc die Zeile //npm.pkg.github.com/:_authToken=\${NODE_AUTH_TOKEN}
+   und in der Shell NODE_AUTH_TOKEN mit einem Token mit Recht read:packages setzen,
+   z. B. nach \`gh auth refresh -s read:packages\`: \`export NODE_AUTH_TOKEN=$(gh auth token)\`.
+   Fehlt der Zugang, den Menschen darum bitten statt Tokens selbst anzulegen.
+3. Installieren: \`pnpm add @ceha/icons@npm:@dero129media/ceha-icons@^${DATEN.version}\`
+   In CI (GitHub Actions): actions/setup-node mit registry-url https://npm.pkg.github.com und
+   NODE_AUTH_TOKEN aus einem Secret mit read:packages.
 Für einzelne Icons ohne Paket: SVG im Konfigurator herunterladen.
 - Astro (astro-icon): zusätzlich \`pnpm add @iconify-json/ceha@npm:@dero129media/ceha-icons@^${DATEN.version}\`,
   dann <Icon name="ceha:<name>" />
