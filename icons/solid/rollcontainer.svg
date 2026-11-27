@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Top plate with top-right lock dot -->
+  <path fill-rule="evenodd" d="
+    M19.0 23.7A1.2 1.2 0 0 1 20.2 22.5H43.8A1.2 1.2 0 0 1 45.0 23.7V26.1H19.0V23.7Z
+    M41.8 23.35A0.95 0.95 0 1 0 41.8 25.25A0.95 0.95 0 1 0 41.8 23.35Z
+  "/>
+  <!-- Shallow upper drawer -->
+  <path fill-rule="evenodd" d="
+    M19.0 27.6H45.0V36.4H19.0V27.6Z
+    M22.9 29.4H41.1A0.5 0.5 0 0 1 41.6 29.9V30.5A0.5 0.5 0 0 1 41.1 31.0H22.9A0.5 0.5 0 0 1 22.4 30.5V29.9A0.5 0.5 0 0 1 22.9 29.4Z
+  "/>
+  <!-- Tall bottom hanging-file drawer -->
+  <path fill-rule="evenodd" d="
+    M19.0 37.9H45.0V54.3H19.0V37.9Z
+    M22.9 39.8H41.1A0.5 0.5 0 0 1 41.6 40.3V40.9A0.5 0.5 0 0 1 41.1 41.4H22.9A0.5 0.5 0 0 1 22.4 40.9V40.3A0.5 0.5 0 0 1 22.9 39.8Z
+  "/>
+  <!-- Caster wheels left & right -->
+  <rect x="22.4" y="54.3" width="2.6" height="1.5"/>
+  <rect x="39.0" y="54.3" width="2.6" height="1.5"/>
+  <path d="M23.7 55.5A2.0 2.0 0 1 0 23.7 59.5A2.0 2.0 0 1 0 23.7 55.5Z"/>
+  <path d="M40.3 55.5A2.0 2.0 0 1 0 40.3 59.5A2.0 2.0 0 1 0 40.3 55.5Z"/>
+</svg>

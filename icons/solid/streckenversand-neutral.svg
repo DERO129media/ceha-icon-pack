@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Unbranded neutral parcel left/top -->
+  <path fill-rule="evenodd" d="
+    M11.6 12.0H38.4A2.6 2.6 0 0 1 41.0 14.6V41.4A2.6 2.6 0 0 1 38.4 44.0H11.6A2.6 2.6 0 0 1 9.0 41.4V14.6A2.6 2.6 0 0 1 11.6 12.0Z
+    M22.2 14.6H27.8A1.0 1.0 0 0 1 28.8 15.6V22.4A1.0 1.0 0 0 1 27.8 23.4H22.2A1.0 1.0 0 0 1 21.2 22.4V15.6A1.0 1.0 0 0 1 22.2 14.6Z
+  "/>
+  <!-- Direct forwarding arrow curving cleanly to bottom-right -->
+  <path d="M26.0 47.0H45.2V42.4L56.0 49.4L45.2 56.4V51.8H26.0A2.4 2.4 0 0 1 26.0 47.0Z"/>
+</svg>

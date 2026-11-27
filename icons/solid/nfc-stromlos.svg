@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Bold central lightning bolt (passive energy) -->
+  <path d="M27.4 10.0L12.0 34.4H23.2L19.0 54.0L36.2 28.6H24.6L27.4 10.0Z"/>
+  <!-- 2 bold NFC signal arcs radiating right -->
+  <path d="M40.73 23.42A10.6 10.6 0 0 1 40.73 40.58L38.5 37.5A6.8 6.8 0 0 0 38.5 26.5Z"/>
+  <path d="M45.08 17.44A18.0 18.0 0 0 1 45.08 46.56L42.85 43.49A14.2 14.2 0 0 0 42.85 20.51Z"/>
+</svg>

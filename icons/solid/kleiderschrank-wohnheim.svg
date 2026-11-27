@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <path fill-rule="evenodd" d="
+    M17.4 4.5H46.6A1.4 1.4 0 0 1 48.0 5.9V58.1A1.4 1.4 0 0 1 46.6 59.5H17.4A1.4 1.4 0 0 1 16.0 58.1V5.9A1.4 1.4 0 0 1 17.4 4.5Z
+    M18.6 7.2H45.4V16.4H18.6V7.2ZM18.6 18.4H31.0V25.6H18.6V18.4ZM18.6 27.4H31.0V34.6H18.6V27.4ZM18.6 36.4H31.0V43.6H18.6V36.4ZM18.6 45.4H31.0V52.6H18.6V45.4ZM33.0 18.4H45.4V52.6H33.0V18.4Z
+  "/>
+  <!-- Clothes rail + minimalist hanger inside right bay -->
+  <rect x="33.0" y="22.0" width="12.4" height="1.8"/>
+  <path d="M38.5 23.8H39.9V25.6L43.6 28.4A0.8 0.8 0 0 1 43.1 29.8H35.3A0.8 0.8 0 0 1 34.8 28.4L38.5 25.6V23.8Z"/>
+</svg>

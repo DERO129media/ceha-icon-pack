@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Row 1 (knob at x=23) -->
+  <rect x="9.0" y="14.6" width="8.0" height="4.0" rx="1.6"/>
+  <rect x="29.0" y="14.6" width="26.0" height="4.0" rx="1.6"/>
+  <path fill-rule="evenodd" d="M23.0 11.4A5.2 5.2 0 1 0 23.0 21.8A5.2 5.2 0 1 0 23.0 11.4Z M23.0 14.6A2.0 2.0 0 1 0 23.0 18.6A2.0 2.0 0 1 0 23.0 14.6Z"/>
+  <!-- Row 2 (knob at x=41) -->
+  <rect x="9.0" y="30.0" width="26.0" height="4.0" rx="1.6"/>
+  <rect x="47.0" y="30.0" width="8.0" height="4.0" rx="1.6"/>
+  <path fill-rule="evenodd" d="M41.0 26.8A5.2 5.2 0 1 0 41.0 37.2A5.2 5.2 0 1 0 41.0 26.8Z M41.0 30.0A2.0 2.0 0 1 0 41.0 34.0A2.0 2.0 0 1 0 41.0 30.0Z"/>
+  <!-- Row 3 (knob at x=27) -->
+  <rect x="9.0" y="45.4" width="12.0" height="4.0" rx="1.6"/>
+  <rect x="33.0" y="45.4" width="22.0" height="4.0" rx="1.6"/>
+  <path fill-rule="evenodd" d="M27.0 42.2A5.2 5.2 0 1 0 27.0 52.6A5.2 5.2 0 1 0 27.0 42.2Z M27.0 45.4A2.0 2.0 0 1 0 27.0 49.4A2.0 2.0 0 1 0 27.0 45.4Z"/>
+</svg>

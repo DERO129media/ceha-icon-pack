@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Architectural floorplan outer walls with entry gap & 3 interior rooms -->
+  <path d="
+    M11.6 10.0H52.4A1.6 1.6 0 0 1 54.0 11.6V52.4A1.6 1.6 0 0 1 52.4 54.0H39.0V49.6H49.6V35.2H37.0V31.2H49.6V14.4H33.2V24.6H29.2V14.4H14.4V31.2H22.0V35.2H14.4V49.6H27.4V54.0H11.6A1.6 1.6 0 0 1 10.0 52.4V11.6A1.6 1.6 0 0 1 11.6 10.0Z
+  "/>
+  <!-- Crisp architectural room/cabinet placement blocks inside plan -->
+  <rect x="17.8" y="17.8" width="8.0" height="8.0" rx="1.2"/>
+  <rect x="37.6" y="17.8" width="8.6" height="8.0" rx="1.2"/>
+  <rect x="17.8" y="38.8" width="11.0" height="7.4" rx="1.2"/>
+</svg>

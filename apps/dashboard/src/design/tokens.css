@@ -1,0 +1,37 @@
+/* Alle Werte aus dem Ceha-Styleguide (ceha-stahlmoebel.de/styleguide). Nur hier definieren. */
+:root {
+  --brand: #0b477e;
+  --brand-light: #12599c;
+  --brand-dark: #08365f;
+  --brand-8: rgb(11 71 126 / 0.08);
+  --brand-15: rgb(11 71 126 / 0.15);
+  --brand-40: rgb(11 71 126 / 0.4);
+  --text: #2e2e2e;
+  --off-white: #f9f9f9;
+  --weiss: #ffffff;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5dc;
+  --gray-500: #6a7282;
+  --gray-600: #4a5565;
+  --erfolg: #00a63e;
+  --hinweis: #00a6f4;
+  --warnung: #e17100;
+  --weiss-72: rgb(255 255 255 / 0.72);
+
+  --schrift-titel: 'Raleway', system-ui, sans-serif;
+  --schrift-text: 'Inter', system-ui, sans-serif;
+
+  --radius: 8px;
+  --schatten-klein: 0 1px 2px rgb(10 10 10 / 0.06);
+  --schatten-mittel: 0 8px 24px rgb(10 10 10 / 0.12);
+  --fokus: 2px solid var(--brand);
+
+  --abstand-1: 4px;
+  --abstand-2: 8px;
+  --abstand-3: 12px;
+  --abstand-4: 16px;
+  --abstand-6: 24px;
+  --abstand-8: 32px;
+  --abstand-12: 48px;
+}

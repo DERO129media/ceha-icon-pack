@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Flat taut folding bed frame / canvas -->
+  <rect x="5.0" y="40.5" width="54.0" height="3.8" rx="1.2"/>
+  <!-- 3 X-shaped crossed folding leg pairs -->
+  <path d="M9.25 45.7H11.75L22.75 59.5H20.25Z"/>
+  <path d="M20.25 45.7H22.75L11.75 59.5H9.25Z"/>
+  <path d="M25.25 45.7H27.75L38.75 59.5H36.25Z"/>
+  <path d="M36.25 45.7H38.75L27.75 59.5H25.25Z"/>
+  <path d="M41.25 45.7H43.75L54.75 59.5H52.25Z"/>
+  <path d="M52.25 45.7H54.75L43.75 59.5H41.25Z"/>
+</svg>

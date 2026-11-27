@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Wall-mount bracket tabs at top -->
+  <path fill-rule="evenodd" d="
+    M16.8 11.2A0.8 0.8 0 0 1 17.6 10.4H20.6A0.8 0.8 0 0 1 21.4 11.2V13.4H16.8V11.2Z
+    M19.1 11.3A0.7 0.7 0 1 0 19.1 12.7A0.7 0.7 0 1 0 19.1 11.3Z
+  "/>
+  <path fill-rule="evenodd" d="
+    M42.6 11.2A0.8 0.8 0 0 1 43.4 10.4H46.4A0.8 0.8 0 0 1 47.2 11.2V13.4H42.6V11.2Z
+    M44.9 11.3A0.7 0.7 0 1 0 44.9 12.7A0.7 0.7 0 1 0 44.9 11.3Z
+  "/>
+  <!-- Floating square steel wall box with upper shelf bay + lower pull-out drawer -->
+  <path fill-rule="evenodd" d="
+    M14.4 13.4H49.6A1.4 1.4 0 0 1 51.0 14.8V45.6A1.4 1.4 0 0 1 49.6 47.0H14.4A1.4 1.4 0 0 1 13.0 45.6V14.8A1.4 1.4 0 0 1 14.4 13.4Z
+    M15.8 16.2H48.2V32.0H15.8V16.2Z
+    M15.8 34.0H48.2V44.2H15.8V34.0Z
+  "/>
+  <!-- Lower drawer front sitting inside lower bay -->
+  <path fill-rule="evenodd" d="
+    M17.7 35.4H46.3A0.5 0.5 0 0 1 46.8 35.9V42.5A0.5 0.5 0 0 1 46.3 43.0H17.7A0.5 0.5 0 0 1 17.2 42.5V35.9A0.5 0.5 0 0 1 17.7 35.4Z
+    M25.5 38.4H38.5A0.5 0.5 0 0 1 39.0 38.9V39.5A0.5 0.5 0 0 1 38.5 40.0H25.5A0.5 0.5 0 0 1 25.0 39.5V38.9A0.5 0.5 0 0 1 25.5 38.4Z
+  "/>
+</svg>

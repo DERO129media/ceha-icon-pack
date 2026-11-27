@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Up-Down double arrow on top-left -->
+  <path d="M22.5 8.5L28.5 15.2H24.6V23.8H28.5L22.5 30.5L16.5 23.8H20.4V15.2H16.5L22.5 8.5Z"/>
+  <!-- Electric lightning bolt on top-right -->
+  <path d="M41.8 8.5L32.6 21.0H39.4L36.2 30.5L47.2 17.5H40.2L41.8 8.5Z"/>
+  <!-- Clean desk silhouette underneath -->
+  <rect x="9.0" y="34.5" width="46.0" height="4.2" rx="1.2"/>
+  <path d="M15.0 40.5H20.0V51.2H23.2V55.0H11.8V51.2H15.0V40.5Z"/>
+  <path d="M44.0 40.5H49.0V51.2H52.2V55.0H40.8V51.2H44.0V40.5Z"/>
+</svg>

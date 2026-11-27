@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Outer heavy hinges left & right -->
+  <rect x="11.2" y="12.5" width="2.4" height="6.2" rx="0.6"/>
+  <rect x="11.2" y="44.2" width="2.4" height="6.2" rx="0.6"/>
+  <rect x="50.4" y="12.5" width="2.4" height="6.2" rx="0.6"/>
+  <rect x="50.4" y="44.2" width="2.4" height="6.2" rx="0.6"/>
+  <path d="M14.5 5.9A1.4 1.4 0 0 1 15.9 4.5H48.1A1.4 1.4 0 0 1 49.5 5.9V9.3H14.5V5.9Z"/>
+  <rect x="14.5" y="11.2" width="16.55" height="41.2"/>
+  <!-- Right fireproof door with clean single-subpath safe lever handle cutout -->
+  <path fill-rule="evenodd" d="
+    M32.95 11.2H49.5V52.4H32.95V11.2Z
+    M37.2 29.5A2.3 2.3 0 1 0 39.26 32.8H42.2A1.0 1.0 0 0 0 42.2 30.8H39.26A2.3 2.3 0 0 0 37.2 29.5Z
+  "/>
+  <path d="M14.5 54.3H49.5V58.1A1.4 1.4 0 0 1 48.1 59.5H15.9A1.4 1.4 0 0 1 14.5 58.1V54.3Z"/>
+</svg>

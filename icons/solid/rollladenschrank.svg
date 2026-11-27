@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <path d="M14.0 5.9A1.4 1.4 0 0 1 15.4 4.5H48.6A1.4 1.4 0 0 1 50.0 5.9V8.5H14.0V5.9Z"/>
+  <rect x="14.0" y="10.4" width="2.2" height="42.2"/><rect x="17.4" y="10.4" width="2.2" height="42.2"/><rect x="20.8" y="10.4" width="2.2" height="42.2"/><rect x="24.2" y="10.4" width="2.2" height="42.2"/><rect x="27.6" y="10.4" width="2.2" height="42.2"/><rect x="34.2" y="10.4" width="2.2" height="42.2"/><rect x="37.6" y="10.4" width="2.2" height="42.2"/><rect x="41.0" y="10.4" width="2.2" height="42.2"/><rect x="44.4" y="10.4" width="2.2" height="42.2"/><rect x="47.8" y="10.4" width="2.2" height="42.2"/>
+  <!-- Center meeting stiles / handles -->
+  <rect x="30.6" y="10.4" width="1.1" height="42.2"/>
+  <rect x="32.3" y="10.4" width="1.1" height="42.2"/>
+  <path d="M14.0 54.5H50.0V58.1A1.4 1.4 0 0 1 48.6 59.5H15.4A1.4 1.4 0 0 1 14.0 58.1V54.5Z"/>
+</svg>

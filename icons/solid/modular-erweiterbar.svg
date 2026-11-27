@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- 3 solid modular units in L-configuration -->
+  <rect x="10.0" y="10.0" width="20.2" height="20.2" rx="2.4"/>
+  <rect x="10.0" y="33.8" width="20.2" height="20.2" rx="2.4"/>
+  <rect x="33.8" y="33.8" width="20.2" height="20.2" rx="2.4"/>
+  <!-- Bold expansion '+' module in top-right quadrant -->
+  <path d="M41.5 11.4H46.3V17.7H52.6V22.5H46.3V28.8H41.5V22.5H35.2V17.7H41.5V11.4Z"/>
+</svg>

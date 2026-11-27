@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Left & right full-height tubular corner posts -->
+  <path d="M6.0 16.7A1.2 1.2 0 0 1 7.2 15.5H8.0A1.2 1.2 0 0 1 9.2 16.7V59.5H6.0V16.7Z"/>
+  <path d="M54.8 16.7A1.2 1.2 0 0 1 56.0 15.5H56.8A1.2 1.2 0 0 1 58.0 16.7V59.5H54.8V16.7Z"/>
+  <!-- Upper safety guard rail (2 bars, open entry on right for ladder) -->
+  <rect x="9.2" y="17.8" width="33.2" height="2.0"/>
+  <rect x="9.2" y="21.6" width="33.2" height="2.0"/>
+  <rect x="40.4" y="17.8" width="2.0" height="12.2"/>
+  <!-- Upper mattress & bed frame -->
+  <rect x="10.8" y="25.2" width="42.4" height="3.6" rx="1.2"/>
+  <rect x="9.2" y="30.0" width="45.6" height="2.8"/>
+  <!-- Lower mattress (clear left of ladder) & lower bed frame -->
+  <rect x="10.8" y="46.2" width="31.0" height="3.6" rx="1.2"/>
+  <rect x="9.2" y="51.0" width="33.6" height="2.8"/>
+  <!-- Integrated vertical 3-rung ladder on right front -->
+  <path fill-rule="evenodd" d="
+    M44.0 32.8H53.4V59.5H51.4V55.4H46.0V59.5H44.0V32.8Z
+    M46.0 34.4H51.4V38.8H46.0V34.4Z
+    M46.0 40.8H51.4V45.2H46.0V40.8Z
+    M46.0 47.2H51.4V53.4H46.0V47.2Z
+  "/>
+</svg>

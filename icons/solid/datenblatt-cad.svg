@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Folded corner triangle top-right -->
+  <path d="M39.4 9.0L51.0 20.6H41.4A2.0 2.0 0 0 1 39.4 18.6V9.0Z"/>
+  <!-- Solid document sheet with bold download arrow cutout -->
+  <path fill-rule="evenodd" d="
+    M15.4 9.0H36.6V19.2A4.2 4.2 0 0 0 40.8 23.4H51.0V52.6A2.4 2.4 0 0 1 48.6 55.0H15.4A2.4 2.4 0 0 1 13.0 52.6V11.4A2.4 2.4 0 0 1 15.4 9.0Z
+    M29.6 27.6H34.4V37.2H39.2L32.0 44.6L24.8 37.2H29.6V27.6Z
+    M22.6 46.8H41.4A1.0 1.0 0 0 1 42.4 47.8V48.8A1.0 1.0 0 0 1 41.4 49.8H22.6A1.0 1.0 0 0 1 21.6 48.8V47.8A1.0 1.0 0 0 1 22.6 46.8Z
+  "/>
+</svg>

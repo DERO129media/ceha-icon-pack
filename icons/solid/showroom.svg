@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Bold location pin with circular window cutout -->
+  <path fill-rule="evenodd" d="
+    M32.0 8.0C22.4 8.0 15.0 15.4 15.0 24.8C15.0 35.8 29.4 47.4 31.1 48.7A1.5 1.5 0 0 0 32.9 48.7C34.6 47.4 49.0 35.8 49.0 24.8C49.0 15.4 41.6 8.0 32.0 8.0Z
+    M32.0 18.0A6.4 6.4 0 1 0 32.0 30.8A6.4 6.4 0 1 0 32.0 18.0Z
+  "/>
+  <!-- Clean showroom floor base bar underneath -->
+  <rect x="16.5" y="51.2" width="31.0" height="4.4" rx="2.2"/>
+</svg>

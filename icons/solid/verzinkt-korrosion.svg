@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Protection shield with water droplet cutout & anti-rust sparkle -->
+  <path fill-rule="evenodd" d="
+    M32 8L51 14.5A2 2 0 0 1 52.3 16.4V30.5C52.3 43.2 43.6 51.4 32.8 55.7A2.2 2.2 0 0 1 31.2 55.7C20.4 51.4 11.7 43.2 11.7 30.5V16.4A2 2 0 0 1 13 14.5L32 8Z
+    M32.0 18.2C32.0 18.2 41.5 29.2 41.5 35.8A9.5 9.5 0 0 1 22.5 35.8C22.5 29.2 32.0 18.2 32.0 18.2Z
+  "/>
+  <!-- Inner solid dry-core highlight inside droplet -->
+  <path d="M32.0 29.5L33.4 33.4L37.3 34.8L33.4 36.2L32.0 40.1L30.6 36.2L26.7 34.8L30.6 33.4L32.0 29.5Z"/>
+</svg>

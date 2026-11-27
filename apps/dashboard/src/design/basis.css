@@ -1,0 +1,8 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { color: var(--text); background: var(--weiss); font: 400 15px/1.5 var(--schrift-text); -webkit-font-smoothing: antialiased; }
+body { margin: 0; }
+h1, h2, h3 { font-family: var(--schrift-titel); font-weight: 600; margin: 0; line-height: 1.2; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: var(--fokus); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+.nur-vorleser { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

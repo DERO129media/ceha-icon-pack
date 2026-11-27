@@ -1,0 +1,26 @@
+{
+  "name": "@ceha/icons",
+  "version": "0.1.0",
+  "description": "Eigenes Icon-Pack der Ceha Deutschland GmbH: SVG, Iconify-Set für astro-icon, React-Komponenten.",
+  "type": "module",
+  "license": "SEE LICENSE IN LICENSE",
+  "sideEffects": false,
+  "exports": {
+    "./react": {
+      "types": "./react/index.d.ts",
+      "import": "./react/index.js"
+    },
+    "./icons.json": "./icons.json",
+    "./meta.json": "./meta.json",
+    "./sprite.svg": "./sprite.svg",
+    "./svg/*": "./svg/*",
+    "./package.json": "./package.json"
+  },
+  "files": ["svg", "react", "icons.json", "meta.json", "sprite.svg", "LICENSE", "README.md"],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": { "optional": true }
+  }
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Rectangular tabletop -->
+  <rect x="6.0" y="33.5" width="52.0" height="3.4" rx="1.0"/>
+  <!-- Steel apron (Zarge) & flush outer corner legs -->
+  <path d="M7.5 38.3H56.5V58.9A0.6 0.6 0 0 1 55.9 59.5H53.4A0.6 0.6 0 0 1 52.8 58.9V41.5H11.2V58.9A0.6 0.6 0 0 1 10.6 59.5H8.1A0.6 0.6 0 0 1 7.5 58.9V38.3Z"/>
+</svg>

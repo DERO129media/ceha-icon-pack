@@ -1,0 +1,12 @@
+node_modules/
+dist/
+scratch/
+.DS_Store
+# Build-Ausgaben des Pakets
+packages/icons/svg/
+packages/icons/react/
+packages/icons/icons.json
+packages/icons/meta.json
+packages/icons/sprite.svg
+packages/icons/*.tgz
+apps/dashboard/src/generated/

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Padded backrest -->
+  <rect x="18.5" y="17.5" width="27.0" height="12.2" rx="2.6"/>
+  <!-- Two vertical tubular back posts -->
+  <rect x="22.8" y="29.7" width="2.4" height="7.4"/>
+  <rect x="38.8" y="29.7" width="2.4" height="7.4"/>
+  <!-- Thick upholstered seat cushion -->
+  <rect x="18.0" y="37.1" width="28.0" height="5.5" rx="1.8"/>
+  <!-- 4-leg tubular steel frame (front outer legs + slightly inset rear legs) -->
+  <path d="M19.5 44.0H44.5V58.9A0.6 0.6 0 0 1 43.9 59.5H42.2A0.6 0.6 0 0 1 41.6 58.9V46.2H39.8V56.2A0.6 0.6 0 0 1 39.2 56.8H37.8A0.6 0.6 0 0 1 37.2 56.2V46.2H26.8V56.2A0.6 0.6 0 0 1 26.2 56.8H24.8A0.6 0.6 0 0 1 24.2 56.2V46.2H22.4V58.9A0.6 0.6 0 0 1 21.8 59.5H20.1A0.6 0.6 0 0 1 19.5 58.9V44.0Z"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Left vertical double-headed dimension arrow -->
+  <path d="M16.5 10.5L22.5 17.5H18.2V46.5H22.5L16.5 53.5L10.5 46.5H14.8V17.5H10.5L16.5 10.5Z"/>
+  <!-- Upper & lower dimension witness bars -->
+  <rect x="24.0" y="21.0" width="30.0" height="2.4" rx="0.8"/>
+  <rect x="24.0" y="40.6" width="30.0" height="2.4" rx="0.8"/>
+  <!-- Thick solid material slab cross-section with core seam -->
+  <path fill-rule="evenodd" d="
+    M26.9 25.4H52.6A1.4 1.4 0 0 1 54.0 26.8V37.2A1.4 1.4 0 0 1 52.6 38.6H26.9A1.4 1.4 0 0 1 25.5 37.2V26.8A1.4 1.4 0 0 1 26.9 25.4Z
+    M29.8 30.8H49.7A0.8 0.8 0 0 1 50.5 31.6V32.4A0.8 0.8 0 0 1 49.7 33.2H29.8A0.8 0.8 0 0 1 29.0 32.4V31.6A0.8 0.8 0 0 1 29.8 30.8Z
+  "/>
+</svg>

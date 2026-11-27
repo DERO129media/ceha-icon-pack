@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Crown above key symbolizing Masterkey authority -->
+  <path d="M12.2 21.8L10.4 11.4L16.4 15.8L21.0 10.0L25.6 15.8L31.6 11.4L29.8 21.8H12.2Z"/>
+  <!-- Bold horizontal key underneath -->
+  <path fill-rule="evenodd" d="
+    M21.0 26.0A12.0 12.0 0 1 0 32.2 42.4H41.5V48.0H46.2V42.4H49.4V49.8H54.2V42.4H55.5A1.5 1.5 0 0 0 57.0 40.9V35.1A1.5 1.5 0 0 0 55.5 33.6H32.2A12.0 12.0 0 0 0 21.0 26.0Z
+    M19.5 33.8A4.2 4.2 0 1 0 19.5 42.2A4.2 4.2 0 1 0 19.5 33.8Z
+  "/>
+</svg>

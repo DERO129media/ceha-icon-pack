@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Upper stacked thin backrest -->
+  <rect x="19.5" y="14.5" width="25.0" height="7.6" rx="1.6"/>
+  <!-- Lower stacked thin backrest -->
+  <rect x="19.5" y="23.8" width="25.0" height="7.6" rx="1.6"/>
+  <!-- Side upright posts connecting backrests to seat stack -->
+  <rect x="21.4" y="31.4" width="2.2" height="4.2"/>
+  <rect x="40.4" y="31.4" width="2.2" height="4.2"/>
+  <!-- Upper thin stacked seat -->
+  <rect x="18.5" y="35.6" width="27.0" height="3.2" rx="1.0"/>
+  <!-- Lower thin stacked seat + side ganging hooks -->
+  <rect x="18.5" y="40.4" width="27.0" height="3.2" rx="1.0"/>
+  <rect x="15.6" y="41.1" width="2.2" height="1.8" rx="0.5"/>
+  <rect x="46.2" y="41.1" width="2.2" height="1.8" rx="0.5"/>
+  <!-- Clean slim tubular legs -->
+  <path d="M20.2 44.9H22.6V58.9A0.6 0.6 0 0 1 22.0 59.5H20.8A0.6 0.6 0 0 1 20.2 58.9V44.9Z"/>
+  <path d="M41.4 44.9H43.8V58.9A0.6 0.6 0 0 1 43.2 59.5H42.0A0.6 0.6 0 0 1 41.4 58.9V44.9Z"/>
+  <rect x="22.6" y="48.4" width="18.8" height="2.0"/>
+</svg>

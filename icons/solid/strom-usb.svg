@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Power plug prongs at top -->
+  <rect x="21.5" y="9.0" width="4.8" height="11.5" rx="1.6"/>
+  <rect x="37.7" y="9.0" width="4.8" height="11.5" rx="1.6"/>
+  <!-- Solid plug body with lightning bolt cutout & bottom cord stem -->
+  <path fill-rule="evenodd" d="
+    M17.0 22.0H47.0A2.4 2.4 0 0 1 49.4 24.4V31.0C49.4 39.2 43.4 45.8 35.4 47.0V54.0A2.0 2.0 0 0 1 33.4 56.0H30.6A2.0 2.0 0 0 1 28.6 54.0V47.0C20.6 45.8 14.6 39.2 14.6 31.0V24.4A2.4 2.4 0 0 1 17.0 22.0Z
+    M33.6 25.8L26.8 35.2H31.8L29.8 42.6L37.6 32.8H32.4L33.6 25.8Z
+  "/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Headset band & earcups around advisor head -->
+  <path d="M16.4 24.0A15.6 15.6 0 0 1 47.6 24.0L44.6 24.0A12.6 12.6 0 0 0 19.4 24.0Z"/>
+  <rect x="14.2" y="21.5" width="4.8" height="10.0" rx="2.0"/>
+  <rect x="45.0" y="21.5" width="4.8" height="10.0" rx="2.0"/>
+  <!-- Mic boom curving cleanly to chin -->
+  <path d="M48.2 31.0V33.6A5.2 5.2 0 0 1 43.0 38.8H36.6V36.0H43.0A2.4 2.4 0 0 0 45.4 33.6V31.0H48.2Z"/>
+  <!-- Advisor head -->
+  <path d="M32.0 15.7A8.8 8.8 0 1 0 32.0 33.3A8.8 8.8 0 1 0 32.0 15.7Z"/>
+  <!-- Advisor shoulders -->
+  <path d="M15.0 52.6C15.0 44.4 22.4 40.4 32.0 40.4C41.6 40.4 49.0 44.4 49.0 52.6V54.2A1.6 1.6 0 0 1 47.4 55.8H16.6A1.6 1.6 0 0 1 15.0 54.2V52.6Z"/>
+</svg>

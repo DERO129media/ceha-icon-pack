@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Top wooden hook rail -->
+  <rect x="9.0" y="13.5" width="46.0" height="4.8" rx="0.8"/>
+  <rect x="15.5" y="19.5" width="1.5" height="3.2" rx="0.5"/><rect x="22.8" y="19.5" width="1.5" height="3.2" rx="0.5"/><rect x="31.25" y="19.5" width="1.5" height="3.2" rx="0.5"/><rect x="39.7" y="19.5" width="1.5" height="3.2" rx="0.5"/><rect x="47.0" y="19.5" width="1.5" height="3.2" rx="0.5"/>
+  <!-- Vertical steel uprights -->
+  <rect x="12.5" y="18.3" width="2.4" height="41.2"/>
+  <rect x="49.1" y="18.3" width="2.4" height="41.2"/>
+  <!-- Backrest wooden slat -->
+  <rect x="9.0" y="29.0" width="46.0" height="4.2" rx="0.7"/>
+  <!-- Seat bench slat -->
+  <rect x="8.0" y="42.5" width="48.0" height="4.0" rx="0.8"/>
+  <!-- Lower shoe rack bar -->
+  <rect x="14.9" y="53.0" width="34.2" height="2.0"/>
+</svg>

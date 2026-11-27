@@ -1,0 +1,33 @@
+{
+  "name": "ceha-icon-pack",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node scripts/build.ts",
+    "check": "node scripts/build.ts --nur-pruefen",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json && pnpm --filter dashboard typecheck",
+    "dev": "pnpm build && pnpm --filter dashboard dev",
+    "dashboard:build": "pnpm build && pnpm --filter dashboard build",
+    "vorlage": "node scripts/vorlage.ts",
+    "pruefen": "pnpm check && pnpm typecheck && pnpm test"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.10",
+    "@types/react": "^19.3.2",
+    "@types/react-dom": "^19.3.0",
+    "lucide-static": "^1.80.0",
+    "pathkit-wasm": "^1.0.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "svgo": "^4.1.0",
+    "svgpath": "^2.6.0",
+    "svgson": "^5.3.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.1"
+  }
+}

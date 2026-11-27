@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Ready shipping crate/box with inset top tape cutout, notched bottom-right for check badge -->
+  <path fill-rule="evenodd" d="
+    M11.6 11.0H44.4A2.4 2.4 0 0 1 46.8 13.4V31.2A13.5 13.5 0 0 0 31.2 48.0H11.6A2.4 2.4 0 0 1 9.2 45.6V13.4A2.4 2.4 0 0 1 11.6 11.0Z
+    M24.5 13.6H31.5A1.0 1.0 0 0 1 32.5 14.6V22.2A1.0 1.0 0 0 1 31.5 23.2H24.5A1.0 1.0 0 0 1 23.5 22.2V14.6A1.0 1.0 0 0 1 24.5 13.6Z
+  "/>
+  <!-- Bold circular checkmark badge bottom-right -->
+  <path fill-rule="evenodd" d="
+    M44.5 33.5A11.0 11.0 0 1 0 44.5 55.5A11.0 11.0 0 1 0 44.5 33.5Z
+    M38.4 44.8L40.7 42.5L43.3 45.1L48.7 39.7L51.0 42.0L43.3 49.7L38.4 44.8Z
+  "/>
+</svg>

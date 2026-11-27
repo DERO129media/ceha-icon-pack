@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Top calendar binding rings -->
+  <rect x="19.5" y="8.5" width="4.8" height="9.0" rx="1.8"/>
+  <rect x="39.7" y="8.5" width="4.8" height="9.0" rx="1.8"/>
+  <!-- Calendar header bar -->
+  <path d="M13.0 14.0H17.5V19.0H26.3V14.0H37.7V19.0H46.5V14.0H51.0A3.0 3.0 0 0 1 54.0 17.0V23.5H10.0V17.0A3.0 3.0 0 0 1 13.0 14.0Z"/>
+  <!-- Calendar body with bold checkmark cutout -->
+  <path fill-rule="evenodd" d="
+    M10.0 26.2H54.0V51.4A3.0 3.0 0 0 1 51.0 54.4H13.0A3.0 3.0 0 0 1 10.0 51.4V26.2Z
+    M21.4 40.6L24.8 37.2L29.6 42.0L40.0 31.6L43.4 35.0L29.6 48.8L21.4 40.6Z
+  "/>
+</svg>

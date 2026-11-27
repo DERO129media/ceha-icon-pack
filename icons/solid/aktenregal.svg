@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <path fill-rule="evenodd" d="
+    M17.4 4.5H46.6A1.4 1.4 0 0 1 48.0 5.9V58.1A1.4 1.4 0 0 1 46.6 59.5H17.4A1.4 1.4 0 0 1 16.0 58.1V5.9A1.4 1.4 0 0 1 17.4 4.5Z
+    M18.6 7.2H45.4V14.9H18.6V7.2ZM18.6 16.7H45.4V24.4H18.6V16.7ZM18.6 26.2H45.4V33.9H18.6V26.2ZM18.6 35.7H45.4V43.4H18.6V35.7ZM18.6 45.2H45.4V52.9H18.6V45.2Z
+  "/>
+  <!-- Stylized upright folder spines on Bay 1 (left) & Bay 3 (right) -->
+  <rect x="20.2" y="8.4" width="2.4" height="6.5" rx="0.4"/>
+  <rect x="23.5" y="8.4" width="2.4" height="6.5" rx="0.4"/>
+  <rect x="26.8" y="8.4" width="2.4" height="6.5" rx="0.4"/>
+  <rect x="34.8" y="27.4" width="2.4" height="6.5" rx="0.4"/>
+  <rect x="38.1" y="27.4" width="2.4" height="6.5" rx="0.4"/>
+  <rect x="41.4" y="27.4" width="2.4" height="6.5" rx="0.4"/>
+  <rect x="20.2" y="36.9" width="2.4" height="6.5" rx="0.4"/>
+  <rect x="23.5" y="36.9" width="2.4" height="6.5" rx="0.4"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Bold solid water droplet with verified checkmark cutout -->
+  <path fill-rule="evenodd" d="
+    M32.0 8.5C32.0 8.5 49.5 27.6 49.5 38.5A17.5 17.5 0 0 1 14.5 38.5C14.5 27.6 32.0 8.5 32.0 8.5Z
+    M23.6 38.4L26.6 35.4L30.2 39.0L38.4 30.8L41.4 33.8L30.2 45.0L23.6 38.4Z
+  "/>
+</svg>

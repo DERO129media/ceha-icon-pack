@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
+  <!-- Upper rightward path & arrow -->
+  <path d="M12.0 29.0V24.5A8.5 8.5 0 0 1 20.5 16.0H42.0V10.6L53.2 18.6L42.0 26.6V21.2H20.5A3.3 3.3 0 0 0 17.2 24.5V29.0H12.0Z"/>
+  <!-- Lower leftward path & arrow -->
+  <path d="M52.0 35.0V39.5A8.5 8.5 0 0 1 43.5 48.0H22.0V53.4L10.8 45.4L22.0 37.4V42.8H43.5A3.3 3.3 0 0 0 46.8 39.5V35.0H52.0Z"/>
+</svg>
